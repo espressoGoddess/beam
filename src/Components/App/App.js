@@ -18,6 +18,15 @@ const App = () => {
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
 
+  useEffect(() => {
+    filterActivities();
+  }, [feeling]);
+
+  const filterActivities = () => {
+    const filtered = activities.filter(act => act.feelings.includes(feeling));
+    setFilteredActivities(filtered);
+  }
+
   return (
     <main>
       <Header user={user}/>
