@@ -21,7 +21,7 @@ const App = () => {
   return (
     <main>
       <Header user={user}/>
-      <Feelings />
+      <Feelings setFeeling={setFeeling}/>
       <Activities />
       <JournalPrompt />
       <JournalEntry />
