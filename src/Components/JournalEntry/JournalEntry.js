@@ -17,7 +17,6 @@ const JournalEntry = ({ journal }) => {
         <div className='journal-content'>
           <p className='journal-text'>{journalEntry}</p>
         </div>
-        <button>Go Back to Feelings Log</button>
       </div>
     </section>
   )
