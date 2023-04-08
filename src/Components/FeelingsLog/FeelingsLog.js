@@ -3,7 +3,7 @@ import './FeelingsLog.css';
 import { DateTime } from 'luxon'
 
 const FeelingsLog = ({logs}) => {
-   
+
   const toTitleCase = (item) => {
     return `${ item.slice(0, 1).toUpperCase() }${ item.slice(1) }`;
   }
@@ -24,7 +24,7 @@ const FeelingsLog = ({logs}) => {
       </tr>)
   })
   return (
-    <section className='FeelingsLog'>
+    <section className='feelingsLog'>
       <table>
         <thead>
           <tr>
