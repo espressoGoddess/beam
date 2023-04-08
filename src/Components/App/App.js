@@ -14,7 +14,7 @@ const App = () => {
   const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
   const [activity, setActivity] = useState('');
-  const [journal, setJournal] = useState('');
+  const [journal, setJournal] = useState(entryData[0]);
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
 
@@ -39,7 +39,7 @@ const App = () => {
       <Feelings setFeeling={setFeeling}/>
       <Activities />
       <JournalPrompt />
-      <JournalEntry />
+      <JournalEntry journal={journal}/>
       <FeelingsLog logs={userLogs}/>
     </main>
   )
