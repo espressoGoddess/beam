@@ -21,7 +21,7 @@ const Activities = ({ activities }) => {
       <h2>{activities[currentActivity].activity}</h2>
       {currentActivity < activities.length - 1 && <button onClick={() => nextActivity()}>→</button>}
     </div>
-    <button>Go</button>
+    <button id="go-button">Let's do it!</button>
     </section>
   )
 }
