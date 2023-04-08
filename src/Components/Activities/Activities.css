@@ -1,0 +1,43 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+h2 {
+  margin: 20px;
+}
+
+button {
+  font-size: 30px;
+  border: none;
+  background-color: white;
+}
+
+#go-button {
+  font-size: 19px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+.activity-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 2%;
+  padding: 50px;
+  font-size: 23px;
+  background-color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.activity-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

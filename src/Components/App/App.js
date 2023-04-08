@@ -18,6 +18,9 @@ const App = () => {
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
 
+  const updateActivity = (activity) => {
+    setActivity(activity);
+  }
 
   useEffect(() => {
     filterActivities();
@@ -28,7 +31,6 @@ const App = () => {
     setFilteredActivities(filtered);
   }
 
-
   useEffect(() => {
     setUserLogs(entryData);
   }, []);
@@ -37,7 +39,7 @@ const App = () => {
     <main>
       <Header user={user}/>
       <Feelings setFeeling={setFeeling}/>
-      <Activities />
+      <Activities activities={activities} updateActivity={updateActivity}/>
       <JournalPrompt />
       <JournalEntry journal={journal}/>
       <FeelingsLog logs={userLogs}/>
