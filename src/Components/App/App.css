@@ -1,7 +1,7 @@
 :root {
-  --primary-color: blue;
-  --secondary-color: red;
-  --tertiary-color: silver;
+  --primary-bkgd-color: rgb(255, 204, 0);
+  --secondary-bkgd-color: rgb(254, 84, 84);
+  --tertiary-bkgd-color: rgb(230, 229, 229);
   --hover-bkgd-color: ivory;
   --bkgd-radial-gradient: content-box radial-gradient(var(--secondary-bkgd-color), var(--primary-bkgd-color));
 }
