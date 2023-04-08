@@ -19,14 +19,19 @@ const App = () => {
   const [filteredActivities, setFilteredActivities] = useState([]);
 
 
+  const updateActivity = (activity) => {
+    setActivity(activity);
+    console.log(activity)
+  }
+
   return (
     <main>
       <Header/>
       {/* <Feelings /> */}
-      <Activities activities={activities}/>
-      {/* <JournalPrompt /> */}
-      {/* <JournalEntry /> */}
-      {/* <FeelingsLog /> */}
+      <Activities activities={activities} updateActivity={updateActivity}/>
+      {/* <JournalPrompt /> 
+      <JournalEntry />
+      <FeelingsLog /> */}
     </main>
   )
 }

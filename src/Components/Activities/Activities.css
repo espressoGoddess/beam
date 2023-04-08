@@ -10,29 +10,29 @@ h2 {
 }
 
 button {
+  font-size: 30px;
   border: none;
   background-color: white;
-  font-size: 30px;
 }
 
 #go-button {
-  background-color: black;
-  color: white;
   font-size: 19px;
   padding: 5px;
+  background-color: black;
+  color: white;
   font-family: 'Playfair Display', serif;
 }
 
 .activity-card {
-  margin-top: 10%;
-  margin-bottom: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10%;
+  margin-bottom: 2%;
   padding: 50px;
+  font-size: 23px;
   background-color: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 23px;
 }
 
 .activity-page {
