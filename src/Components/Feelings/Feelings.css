@@ -1,0 +1,28 @@
+.feelings-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.feelings-header {
+  text-align: center;
+  height: 20%;
+}
+
+.feelings-container {
+  height: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+.feeling{
+  background-color: var(--tertiary-color);
+  padding: 1.5vmin;
+  margin: 1vmin;
+  height: fit-content;
+  border-radius: 20px;
+  cursor: pointer;
+}
