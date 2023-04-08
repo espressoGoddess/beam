@@ -1,0 +1,36 @@
+.feelings-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bkgd-radial-gradient);
+}
+
+.feelings-header {
+  text-align: center;
+}
+
+.feelings-container {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.feeling{
+  background-color: var(--tertiary-bkgd-color);
+  padding: 1vmin 2vmin 1vmin 2vmin;
+  margin: 1vmin;
+  height: fit-content;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color .5s;
+}
+
+.feeling:hover {
+  background-color: var(--hover-bkgd-color);
+}
