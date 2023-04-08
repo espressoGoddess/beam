@@ -1,21 +1,30 @@
 import React from 'react';
 import './FeelingsLog.css';
+import { DateTime } from 'luxon'
 
-const toTitleCase= () => {
-  
-}
+const FeelingsLog = ({logs}) => {
+   
+  const toTitleCase = (item) => {
+    return `${ item.slice(0, 1).toUpperCase() }${ item.slice(1) }`;
+  }
 
-const FeelingsLog = ({logs}) => { 
-  const  userLogs = logs.map(log => {
-      return (<tr key={log.entryId}>
-          <td>{log.date}</td>
-          <td>{log.feeling}</td>
-          <td>{log.activity}</td>
-          <td>{log.journalBool ? '📓' : null}</td>
-        </tr>)
-    })
+  const sorted = logs
+    .map(log => ({
+      ...log,
+      date: DateTime.fromFormat(log.date, 'yyyy-MM-dd'),
+    }))
+    .sort((a, b) => b.date - a.date);
+
+  const  userLogs = sorted.map(log => {
+    return (<tr key={log.entryId}>
+        <td>{log.date.toLocaleString(DateTime.DATE_MED)}</td>
+        <td>{toTitleCase(log.feeling)}</td>
+        <td>{log.activity}</td>
+        <td>{log.journalBool ? '📓' : null}</td>
+      </tr>)
+  })
   return (
-    <div className='FeelingsLog'>
+    <section className='FeelingsLog'>
       <table>
         <thead>
           <tr>
@@ -30,7 +39,7 @@ const FeelingsLog = ({logs}) => {
         </tbody>
       </table>
 
-    </div>
+    </section>
   )
 }
 

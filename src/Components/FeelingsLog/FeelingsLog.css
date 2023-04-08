@@ -8,20 +8,20 @@
     margin: 2rem auto 0;
 }
 
-table {
+.FeelingsLog table {
     border-collapse: collapse;
 }
 
-table td,
-table th {
+.FeelingsLog td,
+.FeelingsLog th {
     padding: .7rem;
     border-bottom: 1px solid var(--border-color);
 }
-th {
+.FeelingsLogs th {
     font-weight: 700;
     text-align: left;
 }
 
-tbody tr:nth-of-type(odd) {
+.FeelingsLogs tbody tr:nth-of-type(odd) {
     background-color: var(--background-color);
 }
