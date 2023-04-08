@@ -3,9 +3,9 @@ import './Header.css'
 
 const Header = () => {
   return (
-    <>
-    <h1>BEAM</h1>
-    </>
+      <header className="logo">
+        <h1>BEAM</h1>
+      </header>
   )
 }
 

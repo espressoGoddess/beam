@@ -1,6 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid white;
+  margin: 20px;
+  width: 150px;
+  height: 45px;
+  border-radius: 65%;
+}
+
 h1 {
+  margin: 20px;
   font-family: 'Playfair Display SC', serif;
   color: white;
   font-size: 40px;
   margin-left: 20px;
+  padding:0%;
 }
