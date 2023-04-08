@@ -17,13 +17,26 @@ const App = () => {
   const [journal, setJournal] = useState('');
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
+
+
+  useEffect(() => {
+    filterActivities();
+  }, [feeling]);
+
+  const filterActivities = () => {
+    const filtered = activities.filter(act => act.feelings.includes(feeling));
+    setFilteredActivities(filtered);
+  }
+
+
   useEffect(() => {
     setUserLogs(entryData);
   }, []);
+
   return (
     <main>
       <Header user={user}/>
-      <Feelings />
+      <Feelings setFeeling={setFeeling}/>
       <Activities />
       <JournalPrompt />
       <JournalEntry />
