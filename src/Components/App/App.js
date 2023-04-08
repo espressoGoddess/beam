@@ -48,6 +48,9 @@ const App = () => {
         <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
           const { id } = match.params;
           const journal = userLogs.find(log => log.entryId === parseInt(id));
+          if (!journal) {
+            return null;
+          }
           return <JournalEntry journal={journal}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
