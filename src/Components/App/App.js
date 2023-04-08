@@ -29,12 +29,12 @@ const App = () => {
 
   return (
     <main>
-      <Header user={user}/>
+      {/* <Header user={user}/> */}
       <Feelings setFeeling={setFeeling}/>
-      <Activities />
+      {/* <Activities />
       <JournalPrompt />
       <JournalEntry />
-      <FeelingsLog />
+      <FeelingsLog /> */}
     </main>
   )
 }

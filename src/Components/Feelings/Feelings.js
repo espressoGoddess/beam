@@ -9,7 +9,8 @@ const Feelings = ({ setFeeling }) => {
 
   return (
     <section className='feelings-page'>
-      <h2 className='feelings-header'>How are you Feeling?</h2>
+      <h1>BEAM</h1>
+      <h2 className='feelings-header'>How are you today?</h2>
       <section className='feelings-container'>
         <p className='feeling happy' onClick={callBack}>Happy</p>
         <p className='feeling happy' onClick={callBack}>Content</p>

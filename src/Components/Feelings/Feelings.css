@@ -3,26 +3,34 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bkgd-radial-gradient);
 }
 
 .feelings-header {
   text-align: center;
-  height: 20%;
 }
 
 .feelings-container {
-  height: 80%;
+  width: 60%;
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
 }
 
 .feeling{
-  background-color: var(--tertiary-color);
-  padding: 1.5vmin;
+  background-color: var(--tertiary-bkgd-color);
+  padding: 1vmin 2vmin 1vmin 2vmin;
   margin: 1vmin;
   height: fit-content;
-  border-radius: 20px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color .5s;
+}
+
+.feeling:hover {
+  background-color: var(--hover-bkgd-color);
 }
