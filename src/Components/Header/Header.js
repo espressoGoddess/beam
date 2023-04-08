@@ -1,9 +1,11 @@
 import React from "react";
 import './Header.css'
 
-const Header = ( {user} ) => {
+const Header = () => {
   return (
-    <h1>{user.name}</h1>
+    <>
+    <h1>BEAM</h1>
+    </>
   )
 }
 

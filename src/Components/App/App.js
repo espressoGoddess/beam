@@ -18,14 +18,15 @@ const App = () => {
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
 
+
   return (
     <main>
-      <Header user={user}/>
-      <Feelings />
-      <Activities />
-      <JournalPrompt />
-      <JournalEntry />
-      <FeelingsLog />
+      <Header/>
+      {/* <Feelings /> */}
+      <Activities activities={activities}/>
+      {/* <JournalPrompt /> */}
+      {/* <JournalEntry /> */}
+      {/* <FeelingsLog /> */}
     </main>
   )
 }

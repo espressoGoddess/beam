@@ -1,0 +1,26 @@
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+h2 {
+  margin: 20px;
+}
+
+
+.activity-card {
+  margin-top: 10%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.activity-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

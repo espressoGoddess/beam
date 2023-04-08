@@ -1,13 +1,28 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import './Activities.css'
 
-const Activities = () => {
+const Activities = ({ activities }) => {
+  const [currentActivity, setCurrentActivity] = useState(0)
+
+  const nextActivity = () => {
+    let nextIndex = currentActivity + 1;
+    setCurrentActivity(nextIndex)
+  }
+
+  const prevActivity = () => {
+    let prevIndex = currentActivity - 1;
+    setCurrentActivity(prevIndex)
+  }
+
   return (
-    <>
-    <div>
-      <h2>Go find a spider!</h2>
+    <section className="activity-page">
+    <div className="activity-card">
+      {currentActivity > 0 && <button onClick={() => prevActivity()}>←</button>}
+      <h2>{activities[currentActivity].activity}</h2>
+      {currentActivity < activities.length - 1 && <button onClick={() => nextActivity()}>→</button>}
     </div>
     <button>Go</button>
-    </>
+    </section>
   )
 }
 
