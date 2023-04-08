@@ -15,7 +15,7 @@ button {
   background-color: white;
 }
 
-#go-button {
+.go-button {
   font-size: 19px;
   padding: 5px;
   background-color: black;
