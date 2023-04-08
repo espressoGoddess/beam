@@ -1,6 +1,7 @@
 import React from 'react';
 import './FeelingsLog.css';
-import { DateTime } from 'luxon'
+import { DateTime } from 'luxon';
+import { Link } from 'react-router-dom';
 
 const FeelingsLog = ({logs}) => {
 
@@ -20,7 +21,7 @@ const FeelingsLog = ({logs}) => {
         <td>{log.date.toLocaleString(DateTime.DATE_MED)}</td>
         <td>{toTitleCase(log.feeling)}</td>
         <td>{log.activity}</td>
-        <td>{log.journalBool ? '📓' : null}</td>
+        <td>{log.journalBool ? <Link to={`/how-you-felt/entry/${log.entryId}`}>📓</Link> : null}</td>
       </tr>)
   })
   return (

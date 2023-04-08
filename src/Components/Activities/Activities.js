@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Activities.css';
+import { Link } from 'react-router-dom';
 
 const Activities = ({ activities, updateActivity }) => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
@@ -25,7 +26,7 @@ const Activities = ({ activities, updateActivity }) => {
         <h2>{activities[currentActivityIndex].activity}</h2>
         {currentActivityIndex < activities.length - 1 && <button onClick={() => nextActivity()}>→</button>}
       </div>
-      <button id="go-button" onClick={() => selectActivity()}>Let's do it!</button>
+      <Link to="/why-are-you-feeling-that-way" className="go-button" onClick={() => selectActivity()}>Let's do it!</Link>
     </section>
   )
 }

@@ -1,4 +1,11 @@
-h1 {
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
   font-family: 'Playfair Display SC', serif;
   color: white;
   font-size: 40px;
