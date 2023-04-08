@@ -16,7 +16,7 @@ const App = () => {
   const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
   const [activity, setActivity] = useState('');
-  const [journal, setJournal] = useState(entryData[0]);
+  const [journal, setJournal] = useState('');
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
 
@@ -45,7 +45,11 @@ const App = () => {
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
         <Route exact path='/what-should-you-do'><Activities activities={activities} updateActivity={updateActivity}/></Route>
         <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt /></Route>
-        <Route exact path='/how-you-felt/entry/:id'><JournalEntry journal={journal}/></Route>
+        <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
+          const { id } = match.params;
+          const journal = userLogs.find(log => log.entryId === parseInt(id));
+          return <JournalEntry journal={journal}/>
+        }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
       </Switch>
     </main>
