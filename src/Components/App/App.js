@@ -11,13 +11,15 @@ import './App.css';
 
 const App = () => {
   const [user, setUser] = useState({id: 1, name: 'KB'});
-  const [userLogs, setUserLogs] = useState(entryData);
+  const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
   const [activity, setActivity] = useState('');
   const [journal, setJournal] = useState('');
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
-
+  useEffect(() => {
+    setUserLogs(entryData);
+  }, []);
   return (
     <main>
       <Header user={user}/>
@@ -25,7 +27,7 @@ const App = () => {
       <Activities />
       <JournalPrompt />
       <JournalEntry />
-      <FeelingsLog />
+      <FeelingsLog logs={userLogs}/>
     </main>
   )
 }
