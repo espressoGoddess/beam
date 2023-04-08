@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 import activityData from '../../sampleData/activityData';
 import entryData from '../../sampleData/entryData';
 import Header from '../Header/Header';
@@ -39,11 +39,13 @@ const App = () => {
   return (
     <main>
       <Header user={user}/>
-      <Feelings setFeeling={setFeeling}/>
-      <Activities activities={activities} updateActivity={updateActivity}/>
-      <JournalPrompt />
-      <JournalEntry journal={journal}/>
-      <FeelingsLog logs={userLogs}/>
+      <Switch>
+        <Route path="/how-are-you-feeling"><Feelings setFeeling={setFeeling}/></Route>
+        <Route path="/what-should-you-do"><Activities activities={activities} updateActivity={updateActivity}/></Route>
+        <Route path="/why-are-you-feeling-that-way"><JournalPrompt /></Route>
+        <Route path="/how-you-felt/entry/:id"><JournalEntry journal={journal}/></Route>
+        <Route path="/how-you-felt"><FeelingsLog logs={userLogs}/></Route>
+      </Switch>
     </main>
   )
 }
