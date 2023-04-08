@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import activityData from '../../sampleData/activityData'
-import entryData from '../../sampleData/entryData'
+import { Route, NavLink } from 'react-router-dom';
+import activityData from '../../sampleData/activityData';
+import entryData from '../../sampleData/entryData';
 import Header from '../Header/Header';
 import Feelings from '../Feelings/Feelings';
 import Activities from '../Activities/Activities';
