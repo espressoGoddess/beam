@@ -28,7 +28,7 @@ const Activities = ({ activities, updateActivity, setFeeling }) => {
     <section className="activity-page">
       <div className="activity-card">
         {currentActivityIndex > 0 && <button onClick={() => prevActivity()}>←</button>}
-        <h2>{activities[currentActivityIndex].activity}</h2>
+        <h2>{activities[currentActivityIndex]?.activity}</h2>
         {currentActivityIndex < activities.length - 1 && <button onClick={() => nextActivity()}>→</button>}
       </div>
       <Link to="/why-are-you-feeling-that-way" className="go-button" onClick={() => selectActivity()}>Let's do it!</Link>
