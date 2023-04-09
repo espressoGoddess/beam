@@ -8,7 +8,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -21,7 +21,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -34,7 +34,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -47,7 +47,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -60,7 +60,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -73,7 +73,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -86,7 +86,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -99,7 +99,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -112,7 +112,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   },
@@ -125,7 +125,7 @@ const activityData = [
       "happy",
       "fearful",
       "angry",
-      "disguisted",
+      "disgusted",
       "sad"
     ]
   }
