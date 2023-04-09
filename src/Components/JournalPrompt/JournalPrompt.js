@@ -19,7 +19,7 @@ const JournalPrompt = ( {updateJournal} ) => {
       <form>
         <h2 className="prompt">Why are you feeling this way?</h2>
         <textarea id="journal-entry" onChange={updateEntry}></textarea>
-        <Link to="/how-you-felt" className="next-btn" onClick={submitEntry}>→</Link>
+        <Link to="/how-you-felt" className="uni-btn" onClick={submitEntry}>→</Link>
       </form>
     </div>
   )

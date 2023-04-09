@@ -1,10 +1,3 @@
-body, html {
-  background: rgb(240,108,116);
-  background: radial-gradient(circle, rgba(240,108,116,1) 0%, rgba(213,157,232,1) 100%);
-  height: 100%;
-  width: 100%;
-}
-
 .prompt-container {
   display: flex;
   flex-direction: column;
@@ -19,7 +12,7 @@ form {
   margin-top: 10vh;
   height: 100%;
   padding: 30px;
-  background-color: white;
+  background-color: var(--element-bkgd-color);
   width: 40vw;
 }
 
@@ -31,20 +24,4 @@ textarea {
 
 .prompt {
   font-family: var(--font-family);
-}
-
-.next-btn {
-  font-family: var(--font-family);
-  font-size: 20px;
-  margin-top: 3vh;
-  padding: 1vmin 2vmin 1vmin 2vmin;
-  border-radius: var(--border-radius);
-  background-color: var(--background-color);
-  font-weight: bold;
-  color: black;
-  font-family: 'Playfair Display', serif;
-}
-
-.next-btn:hover {
-  background-color: rgba(213,157,232,.75);
 }
