@@ -26,11 +26,7 @@
 
 h2 {
   color: rgb(167, 100, 243);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-family);
   font-kerning: none;
   font-size: 3rem;
-}
-
-.link:visited {
-  text-decoration: none;
 }
