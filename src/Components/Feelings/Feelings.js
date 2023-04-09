@@ -3,11 +3,11 @@ import './Feelings.css';
 import feelingsData from './feelingsData';
 import { Link } from 'react-router-dom';
 
-const Feelings = ({ setFeeling }) => {
+const Feelings = () => {
 
   const feelingsLinks = feelingsData.map(feelingData => {
     return feelingData.associatedFeelings.map(feel => {
-      return <Link to={`/what-should-you-do/`} onClick={() => setFeeling(feel)} key={feel} className='feeling'>{feel}</Link>
+      return <Link to={`/what-should-you-do/${feel}`} key={feel} className='feeling'>{feel}</Link>
     })
   });
 

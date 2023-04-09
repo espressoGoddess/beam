@@ -43,7 +43,9 @@ const App = () => {
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
-        <Route exact path='/what-should-you-do'><Activities activities={activities} updateActivity={updateActivity}/></Route>
+        <Route exact path={'/what-should-you-do/:feeling'}>
+          <Activities activities={activities} updateActivity={updateActivity} setFeeling={setFeeling}/>
+        </Route>
         <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt /></Route>
         <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
           const { id } = match.params;

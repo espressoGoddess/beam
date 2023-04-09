@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Activities.css';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
-const Activities = ({ activities, updateActivity }) => {
+const Activities = ({ activities, updateActivity, setFeeling }) => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
+
+  const { params } = useRouteMatch('/what-should-you-do/:feeling');
+  useEffect(() => {
+    setFeeling(params.feeling);
+  }, [setFeeling, params.feeling])
 
   const nextActivity = () => {
     let nextIndex = currentActivityIndex + 1;
