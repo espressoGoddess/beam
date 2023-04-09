@@ -25,6 +25,10 @@ const App = () => {
   const updateActivity = (activity) => {
     setActivity(activity);
   }
+  
+  const saveNewEntry = (newEntry) => {
+    setJournal(newEntry);
+  }
 
   const filterActivities = () => {
     const feelingCategory = feelingsData
@@ -48,10 +52,10 @@ const App = () => {
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
+        <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt updateJournal={saveNewEntry}/></Route>
         <Route exact path={'/what-should-you-do/:feeling'}>
           <Activities activities={filteredActivities} updateActivity={updateActivity} setFeeling={setFeeling}/>
         </Route>
-        <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt /></Route>
         <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
           const { id } = match.params;
           const journal = userLogs.find(log => log.entryId === parseInt(id));
