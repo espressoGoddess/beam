@@ -9,6 +9,7 @@ import Activities from '../Activities/Activities';
 import JournalPrompt from '../JournalPrompt/JournalPrompt';
 import JournalEntry from '../JournalEntry/JournalEntry';
 import FeelingsLog from '../FeelingsLog/FeelingsLog';
+import NotFound from '../NotFound/NotFound';
 import './App.css';
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
           return <JournalEntry journal={journal}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
+        <Route path='*'><NotFound /></Route>
       </Switch>
     </main>
   )
