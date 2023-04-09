@@ -5,3 +5,7 @@
   --hover-bkgd-color: ivory;
   --bkgd-radial-gradient: content-box radial-gradient(var(--secondary-bkgd-color), var(--primary-bkgd-color));
 }
+
+* {
+  text-decoration: none;
+}

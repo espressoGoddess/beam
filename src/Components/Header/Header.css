@@ -14,7 +14,14 @@
   border-radius: 65%;
 }
 
-h1 {
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
   margin: 20px;
   font-family: 'Playfair Display SC', serif;
   color: white;
