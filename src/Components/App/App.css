@@ -4,6 +4,41 @@
   --tertiary-bkgd-color: rgb(230, 229, 229);
   --hover-bkgd-color: ivory;
   --bkgd-radial-gradient: content-box radial-gradient(var(--secondary-bkgd-color), var(--primary-bkgd-color));
+  --element-bkgd-color: rgba(255,255,255, .4);
+  --border-radius: 2px;
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.uni-btn {
+  border-radius: var(--border-radius);
+  background-color: none;
+  border: solid white 1px;
+  padding: 1vmin 2vmin 1vmin 2vmin;
+  margin: 1vmin;
+  height: fit-content;
+  cursor: pointer;
+  text-decoration: none;
+  transition: white .5s;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+.uni-btn:hover {
+  background-color: white;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-decoration: none;
+}
+
+.link:visited {
+  text-decoration: none;
 }
 
 * {

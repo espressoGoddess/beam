@@ -6,9 +6,9 @@ const Home = () => {
 
   return (
     <section className='home'>
-      <h1>BEAM</h1>
-      <h2>Welcome to Beam.</h2>
-      <Link to='/how-are-you-feeling' className='home-btn'>Let's dig in.</Link>
+      <h1 className='logo-home'>BEAM</h1>
+      <h2>Thanks for stopping in</h2>
+      <Link to='/how-are-you-feeling' className='uni-btn'>Let's dig in.</Link>
     </section>
   );
 }

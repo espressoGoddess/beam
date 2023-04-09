@@ -26,20 +26,25 @@ form {
 textarea {
   width: 80%;
   height: 40vh;
+  font-size: 25px;
 }
 
 .prompt {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-family);
 }
 
-.next-button {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+.next-btn {
+  font-family: var(--font-family);
   font-size: 20px;
   margin-top: 3vh;
-  padding: 5px;
-  border-radius: 0;
-  background-color: black;
+  padding: 1vmin 2vmin 1vmin 2vmin;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
   font-weight: bold;
-  color: white;
+  color: black;
   font-family: 'Playfair Display', serif;
+}
+
+.next-btn:hover {
+  background-color: rgba(213,157,232,.75);
 }

@@ -1,19 +1,21 @@
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: var(--font-family);
+}
 
 .journal-boundary {
-  background-color: #86BBD8;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  /* background: var(--bkgd-radial-gradient); */
 }
 
 .journal-entry {
   width: 50%;
   height: 75%;
   background-color: rgba(255,255,255, .4);
-  border-radius: 15px;
-  margin-top: 100px;
+  border-radius: var(--border-radius);
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -32,7 +34,7 @@
   background-color: white;
   width: 75%;
   height: 50%;
-  border-radius: 15px;
+  border-radius: var(--border-radius);
   background: repeating-linear-gradient(
     white, white 25px,
     #86BBD8 26px, #86BBD8 27px
@@ -43,17 +45,9 @@
   line-height: 27px;
 }
 
-button {
-  border: none;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 15px;
-}
-
 h3 {
-  font-family: 'Caveat', cursive;
-  font-size: 1.5rem;
+  
+  font-size: 1rem;
 }
 
 p {

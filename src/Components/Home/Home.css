@@ -7,17 +7,30 @@
   justify-content: center;
 }
 
-.home-btn {
-  background-color: var(--tertiary-bkgd-color);
-  padding: 1vmin 2vmin 1vmin 2vmin;
-  margin: 1vmin;
-  height: fit-content;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color .5s;
+.logo-home {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid white;
+  font-size: 225px;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 0;
+  height: 20vh;
+  width: 40vw;
+  border-radius: 65%;
+  font-family: 'Playfair Display SC', serif;
+  color: white;
 }
 
-.home-btn:hover {
-  background-color: var(--hover-bkgd-color);
+h2 {
+  color: rgb(167, 100, 243);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-kerning: none;
+  font-size: 3rem;
+}
+
+.link:visited {
+  text-decoration: none;
 }
