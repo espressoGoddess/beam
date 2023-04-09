@@ -1,17 +1,18 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
 .logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  text-align: center;
+  justify-content: center;
   border: 1px solid white;
+  font-size: 45px;
   margin: 20px;
-  width: 150px;
-  height: 45px;
+  padding: 5px;
+  padding-top: 0;
+  height: 5vh;
+  width: 10vw;
   border-radius: 65%;
+  font-family: 'Playfair Display SC', serif;
+  color: white;
 }
 
 nav {
@@ -19,13 +20,4 @@ nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  margin: 20px;
-  font-family: 'Playfair Display SC', serif;
-  color: white;
-  font-size: 40px;
-  margin-left: 20px;
-  padding:0%;
 }
