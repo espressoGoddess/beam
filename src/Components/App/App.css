@@ -1,9 +1,4 @@
 :root {
-  --primary-bkgd-color: rgb(255, 204, 0);
-  --secondary-bkgd-color: rgb(254, 84, 84);
-  --tertiary-bkgd-color: rgb(230, 229, 229);
-  --hover-bkgd-color: ivory;
-  --bkgd-radial-gradient: content-box radial-gradient(var(--secondary-bkgd-color), var(--primary-bkgd-color));
   --element-bkgd-color: rgba(255,255,255, .4);
   --border-radius: 2px;
   --font-family: 'Plus Jakarta Sans', sans-serif;
@@ -21,6 +16,7 @@
   transition: white .5s;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
+  color: black;
 }
 
 .uni-btn:hover {
@@ -32,8 +28,6 @@ body, html {
   width: 100%;
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-  background-repeat: no-repeat;
-  background-size: cover;
   text-decoration: none;
 }
 
