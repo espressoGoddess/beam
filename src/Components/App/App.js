@@ -46,6 +46,8 @@ const App = () => {
     setUserLogs(entryData);
   }, []);
 
+  
+
   return (
     <main>
       <Header user={user}/>
