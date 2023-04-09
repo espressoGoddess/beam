@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Activities.css';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
-const Activities = ({ activities, updateActivity }) => {
+const Activities = ({ activities, updateActivity, setFeeling }) => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
+
+  const { params } = useRouteMatch('/what-should-you-do/:feeling');
+  useEffect(() => {
+    setFeeling(params.feeling);
+  }, [setFeeling, params.feeling])
 
   const nextActivity = () => {
     const nextIndex = currentActivityIndex + 1;
@@ -23,7 +28,7 @@ const Activities = ({ activities, updateActivity }) => {
     <section className="activity-page">
       <div className="activity-card">
         {currentActivityIndex > 0 && <button onClick={prevActivity}>←</button>}
-        <h2>{activities[currentActivityIndex].activity}</h2>
+        <h2>{activities[currentActivityIndex]?.activity}</h2>
         {currentActivityIndex < activities.length - 1 && <button onClick={nextActivity}>→</button>}
       </div>
       <Link to="/why-are-you-feeling-that-way" className="go-button" onClick={selectActivity}>Let's do it!</Link>

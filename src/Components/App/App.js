@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
 import activityData from '../../sampleData/activityData';
 import entryData from '../../sampleData/entryData';
+import feelingsData from '../Feelings/feelingsData';
 import Home from '../Home/Home';
 import Header from '../Header/Header';
 import Feelings from '../Feelings/Feelings';
@@ -9,6 +10,7 @@ import Activities from '../Activities/Activities';
 import JournalPrompt from '../JournalPrompt/JournalPrompt';
 import JournalEntry from '../JournalEntry/JournalEntry';
 import FeelingsLog from '../FeelingsLog/FeelingsLog';
+import NotFound from '../NotFound/NotFound';
 import './App.css';
 
 const App = () => {
@@ -23,19 +25,22 @@ const App = () => {
   const updateActivity = (activity) => {
     setActivity(activity);
   }
-
+  
   const saveNewEntry = (newEntry) => {
     setJournal(newEntry);
+  }
+
+  const filterActivities = () => {
+    const feelingCategory = feelingsData
+      .find(({ associatedFeelings }) => associatedFeelings.includes(feeling))
+      ?.feeling.toLowerCase();
+    const filtered = activities.filter(act => act.feelings.includes(feelingCategory));
+    setFilteredActivities(filtered);
   }
 
   useEffect(() => {
     filterActivities();
   }, [feeling]);
-
-  const filterActivities = () => {
-    const filtered = activities.filter(act => act.feelings.includes(feeling));
-    setFilteredActivities(filtered);
-  }
 
   useEffect(() => {
     setUserLogs(entryData);
@@ -47,14 +52,20 @@ const App = () => {
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
-        <Route exact path='/what-should-you-do'><Activities activities={activities} updateActivity={updateActivity}/></Route>
         <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt updateJournal={saveNewEntry}/></Route>
+        <Route exact path={'/what-should-you-do/:feeling'}>
+          <Activities activities={filteredActivities} updateActivity={updateActivity} setFeeling={setFeeling}/>
+        </Route>
         <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
           const { id } = match.params;
           const journal = userLogs.find(log => log.entryId === parseInt(id));
+          if (!journal) {
+            return null;
+          }
           return <JournalEntry journal={journal}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
+        <Route path='*'><NotFound /></Route>
       </Switch>
     </main>
   )
