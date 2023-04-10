@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const knex = require('./knexfile');
+const knex = require('./knex');
 const port = 3001;
 
 app.set('port', port);
