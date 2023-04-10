@@ -1,39 +1,32 @@
-body, html {
-  height: 100%;
-  width: 100%;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+html {
+  font-family: var(--font-family);
 }
 
 h2 {
   margin: 20px;
 }
 
-button {
+.activities-btns {
   font-size: 30px;
   border: none;
   background-color: white;
-}
-
-.go-button {
-  font-size: 19px;
-  padding: 5px;
-  background-color: black;
-  color: white;
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .activity-card {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 300px;
+  width: 40%;
   margin-top: 10%;
   margin-bottom: 2%;
   padding: 50px;
   font-size: 23px;
   background-color: white;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-family);
+  border-radius: 2px;
 }
 
 .activity-page {

@@ -27,11 +27,11 @@ const Activities = ({ activities, updateActivity, setFeeling }) => {
   return (
     <section className="activity-page">
       <div className="activity-card">
-        {currentActivityIndex > 0 && <button onClick={prevActivity}>←</button>}
+        {currentActivityIndex > 0 && <button className="activities-btns" onClick={prevActivity}>←</button>}
         <h2>{activities[currentActivityIndex]?.activity}</h2>
-        {currentActivityIndex < activities.length - 1 && <button onClick={nextActivity}>→</button>}
+        {currentActivityIndex < activities.length - 1 && <button className="activities-btns" onClick={nextActivity}>→</button>}
       </div>
-      <Link to="/why-are-you-feeling-that-way" className="go-button" onClick={selectActivity}>Let's do it!</Link>
+      <Link to="/why-are-you-feeling-that-way" className="uni-btn" onClick={selectActivity}>Let's do it!</Link>
     </section>
   )
 }

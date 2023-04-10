@@ -1,11 +1,12 @@
 .feelingsLog {
-    --border-color: rgb(222, 226, 230);
+    background-color: var(--element-bkgd-color);
+    --border-color: rgb(89, 91, 92);
     --background-color: rgba(0, 0, 0, 0.05);
     padding: 1.5rem 2rem;
-    border-radius: 6px;
-    border: var(--border-color) 1px solid;
+    border-radius: var(--border-radius);
     width: fit-content;
     margin: 2rem auto 0;
+    margin-top: 10vh;
 }
 
 .feelingsLog table {
