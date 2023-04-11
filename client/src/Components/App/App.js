@@ -62,7 +62,7 @@ const App = () => {
         </Route>
         <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
           const { id } = match.params;
-          const journal = userLogs.find(log => log.entryId === parseInt(id));
+          const journal = userLogs.find(log => log.entry_id === parseInt(id));
           if (!journal) {
             return null;
           }
