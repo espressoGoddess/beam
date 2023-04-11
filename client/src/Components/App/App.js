@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import activityData from '../../sampleData/activityData';
 import entryData from '../../sampleData/entryData';
 import feelingsData from '../Feelings/feelingsData';
