@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { getAllEntries } from '../../utilities/api-calls';
 import activityData from '../../sampleData/activityData';
 import entryData from '../../sampleData/entryData';
 import feelingsData from '../Feelings/feelingsData';
@@ -43,7 +44,8 @@ const App = () => {
   }, [feeling]);
 
   useEffect(() => {
-    setUserLogs(entryData);
+    getAllEntries()
+    .then(data => setUserLogs(data));
   }, []);
 
   
