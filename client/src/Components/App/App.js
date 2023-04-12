@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { getAllEntries } from '../../utilities/api-calls';
 import activityData from '../../sampleData/activityData';
-import entryData from '../../sampleData/entryData';
 import feelingsData from '../Feelings/feelingsData';
 import Home from '../Home/Home';
 import Header from '../Header/Header';
@@ -43,7 +43,8 @@ const App = () => {
   }, [feeling]);
 
   useEffect(() => {
-    setUserLogs(entryData);
+    getAllEntries()
+    .then(data => setUserLogs(data));
   }, []);
 
   
@@ -60,7 +61,7 @@ const App = () => {
         </Route>
         <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
           const { id } = match.params;
-          const journal = userLogs.find(log => log.entryId === parseInt(id));
+          const journal = userLogs.find(log => log.entry_id === parseInt(id));
           if (!journal) {
             return null;
           }

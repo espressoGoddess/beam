@@ -5,7 +5,7 @@ import './JournalEntry.css';
 
 const JournalEntry = ({ journal }) => {
 
-  const {date, feeling, activity, journalEntry} = journal;
+  const {date, feeling, activity, journal_entry} = journal;
   const formattedDate = DateTime.fromFormat(date, 'yyyy-MM-dd')
 
   return (
@@ -16,7 +16,7 @@ const JournalEntry = ({ journal }) => {
           <h3>{`Today you were feeling ${feeling} so you decided to ${activity}`}</h3>
         </div>
         <div className='journal-content'>
-          <p className='journal-text'>{journalEntry}</p>
+          <p className='journal-text'>{journal_entry}</p>
         </div>
       <Link to={'/how-you-felt'} className="uni-btn">←</Link>
       </div>
