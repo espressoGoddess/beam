@@ -11,11 +11,15 @@ const Feelings = () => {
     })
   });
 
+  const sortedLinks = feelingsLinks.flat().sort((a, b) => {
+    return (a.key > b.key) ? 1 : -1;
+  })
+  
   return (
     <section className='feelings-page'>
       <h2 className='feelings-header'>How are you today?</h2>
       <div className='feelings-container'>
-        {feelingsLinks}
+        {sortedLinks}
       </div>
     </section>
   );
