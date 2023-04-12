@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
 import './JournalEntry.css';
 
@@ -17,6 +18,7 @@ const JournalEntry = ({ journal }) => {
         <div className='journal-content'>
           <p className='journal-text'>{journalEntry}</p>
         </div>
+      <Link to={'/how-you-felt'}>←</Link>
       </div>
     </section>
   )
