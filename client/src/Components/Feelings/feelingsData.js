@@ -3,7 +3,18 @@ const feelings = [{
     'associatedFeelings': [
       'Happy',
       'Content',
-      'Optimistic'
+      'Optimistic',
+      'Powerful',
+      'Confident',
+      'Inquistive',
+      'Hopeful',
+      'Inspired',
+      'Playful',
+      'Proud',
+      'Thankful',
+      'Valued',
+      'Free',
+      'Centered'
     ]
   },
   {
@@ -11,7 +22,9 @@ const feelings = [{
     'associatedFeelings': [
       'Sad',
       'Lonely',
-      'Depressed'
+      'Depressed',
+      'Empty',
+      'Ashamed'
     ]
   },
   {
@@ -19,7 +32,10 @@ const feelings = [{
     'associatedFeelings': [
       'Surprised',
       'Confused',
-      'Excited'
+      'Excited',
+      'Amazed',
+      'Energetic',
+      'Encouraged'
     ]
   },
   {
@@ -35,7 +51,8 @@ const feelings = [{
     'associatedFeelings': [
       'Fearful',
       'Anxious',
-      'Insecure'
+      'Insecure',
+      'Overwhelmed'
     ]
   },
   {
@@ -43,7 +60,9 @@ const feelings = [{
     'associatedFeelings': [
       'Angry',
       'Distant',
-      'Frustrated'
+      'Frustrated',
+      'Bitter',
+      'Annoyed'
     ]
   },
   {
@@ -51,7 +70,8 @@ const feelings = [{
     'associatedFeelings': [
       'Disgusted',
       'Disappointed',
-      'Awful'
+      'Awful',
+      'Judgmental'
     ]
   }
 ];

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import './JournalPrompt.css';
 
-const JournalPrompt = ( {updateJournal} ) => {
+const JournalPrompt = ( {updateJournal, feeling} ) => {
   const [newEntry, setNewEntry] = useState('');
 
   return (
@@ -10,7 +10,7 @@ const JournalPrompt = ( {updateJournal} ) => {
       <form>
         <h2 className="prompt">Why are you feeling this way?</h2>
         <textarea id="journal-entry" onChange={(event) => setNewEntry(event.target.value)}></textarea>
-        <Link to= "/how-you-felt" className="uni-btn" onClick={() => updateJournal(newEntry)}>→</Link>
+        <Link to={`/what-should-you-do/${feeling}`} className="uni-btn" onClick={() => updateJournal(newEntry)}>→</Link>
       </form>
     </div>
   )

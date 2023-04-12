@@ -28,5 +28,17 @@ h2 {
   color: rgb(167, 100, 243);
   font-family: var(--font-family);
   font-kerning: none;
-  font-size: 3rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.blurb {
+  color: rgb(167, 100, 243);
+  font-family: var(--font-family);
+  font-kerning: none;
+  font-size: 1.2rem;
+  width: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+  margin: 0px;
 }
