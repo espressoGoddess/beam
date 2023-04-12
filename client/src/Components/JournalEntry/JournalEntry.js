@@ -18,7 +18,7 @@ const JournalEntry = ({ journal }) => {
         <div className='journal-content'>
           <p className='journal-text'>{journalEntry}</p>
         </div>
-      <Link to={'/how-you-felt'}>←</Link>
+      <Link to={'/how-you-felt'} className="uni-btn">←</Link>
       </div>
     </section>
   )
