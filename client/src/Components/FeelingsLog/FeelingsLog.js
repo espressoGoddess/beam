@@ -17,11 +17,11 @@ const FeelingsLog = ({logs}) => {
     .sort((a, b) => b.date - a.date);
 
   const  userLogs = sorted.map(log => {
-    return (<tr key={log.entryId}>
+    return (<tr key={log.entry_id}>
         <td>{log.date.toLocaleString(DateTime.DATE_MED)}</td>
         <td>{toTitleCase(log.feeling)}</td>
         <td>{log.activity}</td>
-        <td>{log.journalBool ? <Link to={`/how-you-felt/entry/${log.entryId}`}>📓</Link> : null}</td>
+        <td>{<Link to={`/how-you-felt/entry/${log.entry_id}`}>📓</Link>}</td>
       </tr>)
   })
   return (

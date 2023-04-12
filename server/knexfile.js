@@ -9,7 +9,7 @@ module.exports = {
     client: 'pg',
     connection: {
       port: 5432,
-      user: "chrissy",
+      user: "joefogiato",
       password: null,
       database: "beam_api"
     }

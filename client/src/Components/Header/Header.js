@@ -13,13 +13,11 @@ const Header = () => {
           <header>
             <nav>
               <Link to='/' className='logo'>BEAM</Link>
-              <Link to='/how-you-felt' className='uni-btn'>Feelings Archive</Link>
             </nav>
           </header>
         </Route>
       </Switch>
     </>
-
     
   )
 }
