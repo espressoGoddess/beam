@@ -24,3 +24,13 @@ app.get('/api/v1/entries', async (req, res) => {
     console.error(error.message);
   }
 });
+
+app.post('/api/v1/entries', async (req, res) => {
+  try {
+    const newEntry = req.body;
+    await knex("entries").insert(newEntry);
+    res.status(201).json(newEntry);
+  } catch (error) {
+    console.error(error.message);
+  }
+})
