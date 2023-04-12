@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import activityData from '../../sampleData/activityData';
 import entryData from '../../sampleData/entryData';
 import feelingsData from '../Feelings/feelingsData';
@@ -54,7 +54,7 @@ const App = () => {
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
-        <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt updateJournal={saveNewEntry}/></Route>
+        <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt feeling={feeling} updateJournal={saveNewEntry}/></Route>
         <Route exact path={'/what-should-you-do/:feeling'}>
           <Activities activities={filteredActivities} updateActivity={updateActivity} setFeeling={setFeeling}/>
         </Route>
