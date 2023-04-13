@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { getAllEntries } from '../../utilities/api-calls';
+import { getAllEntries, addNewEntry } from '../../utilities/api-calls';
 import activityData from '../../sampleData/activityData';
 import feelingsData from '../Feelings/feelingsData';
 import Home from '../Home/Home';
@@ -17,17 +17,24 @@ const App = () => {
   const [user, setUser] = useState({id: 1, name: 'KB'});
   const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
-  const [activity, setActivity] = useState('');
   const [journal, setJournal] = useState('');
   const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
 
-  const updateActivity = (activity) => {
-    setActivity(activity);
-  }
-  
   const saveNewEntry = (newEntry) => {
     setJournal(newEntry);
+  }
+
+  const addEntry = (activity) => {
+    const date = new Date();
+    const newEntry = {
+      user_id: user.id,
+      date: date.toISOString().split('T')[0],
+      feeling: feeling,
+      activity: activity,
+      journal_entry: journal
+    }
+    addNewEntry(newEntry).then(getAllEntries).then(data => setUserLogs(data));
   }
 
   const filterActivities = () => {
@@ -47,8 +54,6 @@ const App = () => {
     .then(data => setUserLogs(data));
   }, []);
 
-  
-
   return (
     <main>
       <Header user={user}/>
@@ -57,7 +62,7 @@ const App = () => {
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
         <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt feeling={feeling} updateJournal={saveNewEntry}/></Route>
         <Route exact path={'/what-should-you-do/:feeling'}>
-          <Activities activities={filteredActivities} updateActivity={updateActivity} setFeeling={setFeeling}/>
+          <Activities addEntry={addEntry} activities={filteredActivities} setFeeling={setFeeling}/>
         </Route>
         <Route exact path='/how-you-felt/entry/:id' render={({ match }) => {
           const { id } = match.params;

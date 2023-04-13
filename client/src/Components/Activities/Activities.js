@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import './Activities.css';
 import { Link, useRouteMatch } from 'react-router-dom';
 
-const Activities = ({ activities, updateActivity, setFeeling }) => {
+const Activities = ({ activities, addEntry, setFeeling }) => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
 
   const { params } = useRouteMatch('/what-should-you-do/:feeling');
@@ -21,7 +21,7 @@ const Activities = ({ activities, updateActivity, setFeeling }) => {
   }
 
   const selectActivity = () => {
-    updateActivity(activities[currentActivityIndex].activity);
+    addEntry(activities[currentActivityIndex].activity);
   }
 
   return (
