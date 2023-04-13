@@ -2,7 +2,7 @@ describe('Home page', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/entries', {
       statusCode: 200,
-      fixture: 'example.json'
+      fixture: 'entries.json'
     })
     cy.visit('http://localhost:3000/')
   })
@@ -31,5 +31,6 @@ describe('Home page', () => {
     cy.get('.uni-btn').should('be.visible').contains('Let\'s dig in').click()
     cy.get('.home').should('not.exist')
     cy.get('main').should('be.visible')
+    cy.url().should('eq', 'http://localhost:3000/how-are-you-feeling')
   })
 })
