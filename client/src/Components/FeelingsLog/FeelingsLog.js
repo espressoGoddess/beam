@@ -2,6 +2,7 @@ import React from 'react';
 import './FeelingsLog.css';
 import { DateTime } from 'luxon';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const FeelingsLog = ({logs}) => {
 
@@ -45,3 +46,7 @@ const FeelingsLog = ({logs}) => {
 }
 
 export default FeelingsLog;
+
+FeelingsLog.propTypes = {
+  logs: PropTypes.arrayOf(PropTypes.object)
+}
