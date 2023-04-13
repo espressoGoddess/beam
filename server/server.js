@@ -24,3 +24,24 @@ app.get('/api/v1/entries', async (req, res) => {
     console.error(error.message);
   }
 });
+
+app.post('/api/v1/entries', async (req, res) => {
+  try {
+    const newEntry = req.body;
+    await knex("entries").insert(newEntry);
+    res.status(201).json(newEntry);
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
+app.put('/api/v1/entries/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { journal_entry } = req.body;
+    await knex("entries").where({ entry_id: id }).update({ journal_entry: journal_entry });
+      res.status(204).json(`Entry ${id} was updated successfully`);
+  } catch (error) {
+    console.error(error.message);
+  }
+})
