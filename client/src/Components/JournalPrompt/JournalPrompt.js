@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import './JournalPrompt.css';
 
 const JournalPrompt = ( {updateJournal, feeling} ) => {
@@ -17,3 +18,8 @@ const JournalPrompt = ( {updateJournal, feeling} ) => {
 }
 
 export default JournalPrompt;
+
+JournalPrompt.propTypes = {
+  updateJournal: PropTypes.func.isRequired,
+  feeling: PropTypes.string.isRequired
+}
