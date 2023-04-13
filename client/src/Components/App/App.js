@@ -18,7 +18,6 @@ const App = () => {
   const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
   const [journal, setJournal] = useState('');
-  const [activities, setActivities] = useState(activityData);
   const [filteredActivities, setFilteredActivities] = useState([]);
 
   const saveNewEntry = (newEntry) => {
@@ -41,7 +40,7 @@ const App = () => {
     const feelingCategory = feelingsData
       .find(({ associatedFeelings }) => associatedFeelings.includes(feeling))
       ?.feeling.toLowerCase();
-    const filtered = activities.filter(act => act.feelings.includes(feelingCategory));
+    const filtered = activityData.filter(act => act.feelings.includes(feelingCategory));
     setFilteredActivities(filtered);
   }
 
