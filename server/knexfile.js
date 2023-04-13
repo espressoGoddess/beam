@@ -9,8 +9,8 @@ module.exports = {
     client: 'pg',
     connection: {
       port: 5432,
-      user: "joefogiato",
-      password: null,
+      user: "postgres",
+      password: 'postgres',
       database: "beam_api"
     }
   },
