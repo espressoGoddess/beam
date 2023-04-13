@@ -26,8 +26,15 @@ app.get('/api/v1/entries', async (req, res) => {
 });
 
 app.post('/api/v1/entries', async (req, res) => {
+  const newEntry = req.body;
+
+  for (let parameter of ['user_id', 'date', 'feeling', 'activity', 'journal_entry']) {
+    if (!newEntry[parameter]) {
+      return res.status(422).json({message: `You are missing a required parameter of ${parameter}.`});
+    }
+  }
+
   try {
-    const newEntry = req.body;
     await knex("entries").insert(newEntry);
     res.status(201).json(newEntry);
   } catch (error) {
