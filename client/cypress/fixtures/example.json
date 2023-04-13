@@ -1,5 +1,23 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
-}
+[
+  {
+    "user_id": 1,
+    "date": "2023-04-07",
+    "feeling": "anxious",
+    "activity": "Put on an irresistible song and wiggle your body the weirdest way you can. Decide on the movements based on listening to how your body wants to move, stretch, and shake out, NOT on if the dance moves are good. The more like Ace Ventura: Pet Detective meets hippie at Woodstock the better",    
+    "journal_entry": "Today I am feeling anxious because I pooped my pants in front of my crush."
+  },
+  {
+    "user_id": 1,
+    "date": "2023-04-06",
+    "feeling": "mad",
+    "activity": "Put on an irresistible song and wiggle your body the weirdest way you can. Decide on the movements based on listening to how your body wants to move, stretch, and shake out, NOT on if the dance moves are good. The more like Ace Ventura: Pet Detective meets hippie at Woodstock the better",
+    "journal_entry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "user_id": 1,
+    "date": "2023-04-05",
+    "feeling": "happy",
+    "activity": "Call a loved one and tell them you love them blah blah blah blah blah blah blah blah blah blah blah blah .",    
+    "journal_entry": "Today I am feeling anxious because I pooped my pants in front of my crush."
+  }
+]
