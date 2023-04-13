@@ -46,9 +46,15 @@ app.put('/api/v1/entries/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { journal_entry } = req.body;
-    await knex("entries").where({ entry_id: id }).update({ journal_entry: journal_entry });
-      res.status(204).json(`Entry ${id} was updated successfully`);
+    const dbId = await knex("entries").select("entry_id").where({ entry_id: id });
+
+    if (!dbId[0]?.entry_id) {
+      res.status(400).json({message: `An entry with the id of ${id} was not found.`});
+    } else {
+      await knex("entries").where({ entry_id: id }).update({ journal_entry: journal_entry });
+      res.status(202).json({message: `Entry ${id} was updated successfully`});
+    }
   } catch (error) {
     console.error(error.message);
   }
-})
+});
