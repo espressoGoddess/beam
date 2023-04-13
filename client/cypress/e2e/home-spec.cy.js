@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Home page', () => {
   it('Should display the site logo', () => {
     cy.visit('https://example.cypress.io')
   })
