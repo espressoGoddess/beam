@@ -28,5 +28,11 @@ const JournalEntry = ({ journal }) => {
 export default JournalEntry;
 
 JournalEntry.propTypes = {
-  journal: PropTypes.objectOf(PropTypes.string.isRequired)
+  journal: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    feeling: PropTypes.string.isRequired,
+    activity: PropTypes.string.isRequired,
+    journal_entry: PropTypes.string.isRequired,
+    entry_id: PropTypes.number
+  })
 };
