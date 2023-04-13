@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
+import PropTypes from 'prop-types';
 import './JournalEntry.css';
 
 const JournalEntry = ({ journal }) => {
@@ -25,3 +26,7 @@ const JournalEntry = ({ journal }) => {
 }
 
 export default JournalEntry;
+
+JournalEntry.propTypes = {
+  journal: PropTypes.objectOf(PropTypes.string.isRequired)
+};
