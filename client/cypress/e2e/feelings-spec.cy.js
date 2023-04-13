@@ -11,7 +11,7 @@ describe('Feelings page', () => {
     cy.visit('https://example.cypress.io')
   })
 
-  it('Should bring the user to the journal prompt spec when a feeling is selected', () => {
+  it('Should bring the user from the feelings page to the journal prompt page when a feeling is selected', () => {
     cy.visit('https://example.cypress.io')
   })
 
