@@ -204,6 +204,104 @@ const activityData = [
     activityId: 41,
     activity: 'Put on an irresistible song and wiggle your body the weirdest way you can. Decide on the movements based on listening to how your body wants to move, stretch, and shake out, NOT on if the dance moves are good. The more like Ace Ventura: Pet Detective meets hippie at Woodstock the better',
     feelings: [ 'bad' ]
+  }, 
+  {
+    "activityId": 42,
+    "activity": "Make up and sing a song in the weirdest voice. Play around with different volume levels and pitches and have fun!",
+    "feelings": [
+      "surprised",
+    ]
+  },
+  {
+    "activityId": 43,
+    "activity": "Create a vision board: Make a visual representation of your goals and aspirations to help keep you motivated and excited.",
+    "feelings": [
+      "surprised",
+    ]
+  },
+  {
+    "activityId": 44,
+    "activity": "Set a timer for 5 minutes to focus on your breath.",
+    "feelings": [
+      "fearful",
+    ]
+  },
+  {
+    "activityId": 45,
+    "activity": "Create a 'fear buddy': Create/find a stuffed animal that represents your fear. Talk to it and give it a silly name. This can help you externalize your fear and view it in a more playful way.",
+    "feelings": [
+      "fearful",
+    ]
+  },
+  {
+    "activityId": 46,
+    "activity": "Punch and hit your pillow as much as you want to work out some energy.",
+    "feelings": [
+      "angry",
+    ]
+  },
+  {
+    "activityId": 47,
+    "activity": "Find an open space and have a screaming contest with a friend",
+    "feelings": [
+      "angry",
+    ]
+  },
+  {
+    "activityId": 48,
+    "activity": "Create an 'awful art' piece: Create a piece of art that's intentionally bad or ugly, using unusual colors or shapes. This can help you to accept that what you are feeling is okay.",
+    "feelings": [
+      "disgusted",
+    ]
+  },
+  {
+    "activityId": 49,
+    "activity": "If it's sunny outside, go lay in the sun and focus on the feeling of the sunshine beaming onto your body.",
+    "feelings": [
+      "disgusted",
+    ]
+  },
+  {
+    "activityId": 50,
+    "activity": "Guy buy yourself a latte.",
+    "feelings": [
+      "sad",
+    ]
+  },
+  {
+    "activityId": 51,
+    "activity": "Invite friends over to have a pity party. Share sad stories and eat comfort food.",
+    "feelings": [
+      "sad",
+    ]
+  },
+  {
+    "activityId": 52,
+    "activity": "Have a silly photoshoot: Grab some props and snap some fun and goofy pictures of yourself to capture your happiness in the moment.",
+    "feelings": [
+      "happy",
+    ]
+  },
+  {
+    "activityId": 53,
+    "activity": "Put on a silly outfit, your favorite playlist, and perform the weirdest dance moves you can conjure.",
+    "feelings": [
+      "happy",
+    ]
+  },
+  {
+    "activityId": 54,
+    "activity": "Create a whimsical talisman: Craft a silly and unusual object or trinket that represents your bad mood. This can be anything from a miniature rubber chicken to a glittery rock. Keep it with you as a reminder to take things less seriously and embrace the playful side of life.",
+    "feelings": [
+      "bad",
+    ]
+  },
+  {
+    "activityId": 1,
+    "activity": "Create a cozy blanket fort with lots of pillows, and take a nap or watch your favorite movie.",
+    "feelings": [
+      "bad",
+    ]
   }
 ];
 

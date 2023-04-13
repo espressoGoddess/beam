@@ -2,8 +2,9 @@ html {
   font-family: var(--font-family);
 }
 
-h2 {
-  margin: 20px;
+.activity-card h2 {
+  margin: 10px;
+  font-size: xx-large;
 }
 
 .activities-btns {
@@ -16,14 +17,14 @@ h2 {
 
 .activity-card {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 300px;
-  width: 40%;
+  text-align: center;
+  height: 365px;
+  width: 50%;
   margin-top: 10%;
   margin-bottom: 2%;
-  padding: 50px;
-  font-size: 23px;
+  padding: 30px;
   background-color: white;
   font-family: var(--font-family);
   border-radius: 2px;
