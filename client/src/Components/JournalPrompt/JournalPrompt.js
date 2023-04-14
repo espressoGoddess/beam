@@ -11,7 +11,7 @@ const JournalPrompt = ( {updateJournal, feeling} ) => {
       <form>
         <h2 className="prompt">Why are you feeling this way?</h2>
         <textarea id="journal-entry" onChange={(event) => setNewEntry(event.target.value)}></textarea>
-        <Link to={`/what-should-you-do/${feeling}`} className="uni-btn" onClick={() => updateJournal(newEntry)}>→</Link>
+        <Link to={`/what-should-you-do/${feeling}`} className="uni-btn" onClick={() => updateJournal(newEntry)}><i class="fa-solid fa-arrow-right-long"></i></Link>
       </form>
     </div>
   )

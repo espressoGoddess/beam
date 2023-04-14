@@ -6,7 +6,11 @@ import './JournalEntry.css';
 
 const JournalEntry = ({ journal }) => {
   const {date, feeling, activity, journal_entry} = journal;
-  const formattedDate = DateTime.fromFormat(date, 'yyyy-MM-dd')
+  const formattedDate = DateTime.fromFormat(date, 'yyyy-MM-dd');
+
+  const cancelBtn = <i class="fa-solid fa-circle-xmark"></i>;
+  const editBtn = <i class="fa-solid fa-pencil"></i>;
+  const saveBtn = <i class="fa-solid fa-check"></i>;
 
   return (
     <section className='journal-boundary'>
@@ -18,7 +22,7 @@ const JournalEntry = ({ journal }) => {
         <div className='journal-content'>
           <p className='journal-text'>{journal_entry}</p>
         </div>
-      <Link to={'/how-you-felt'} className="uni-btn">←</Link>
+      <Link to={'/how-you-felt'} className="uni-btn"><i class="fa-solid fa-arrow-left-long"></i></Link>
       </div>
     </section>
   )

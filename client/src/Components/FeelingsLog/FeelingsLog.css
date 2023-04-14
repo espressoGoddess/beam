@@ -27,3 +27,8 @@ th {
 .feelingsLogs tbody tr:nth-of-type(odd) {
     background-color: var(--background-color);
 }
+
+.fa-solid {
+    color: black;
+    font-size: 1.3rem;
+}
