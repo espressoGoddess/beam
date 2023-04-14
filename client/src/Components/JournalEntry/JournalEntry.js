@@ -9,34 +9,39 @@ const JournalEntry = ({ journal, entryID }) => {
   const {date, feeling, activity, journal_entry } = journal;
 
   const [entry, setEntry] = useState(journal_entry);
+  const [savedEntry, setSavedEntry] = useState(journal_entry);
   const [edit, setEdit] = useState(false);
+  
 
   const formattedDate = DateTime.fromFormat(date, 'yyyy-MM-dd');
+  
   const changeEdit = () => {
     setEdit(!edit);
   }
 
-  const handleChange = (event) => setEntry(event.target.value);
+  const handleChange = (event) => setSavedEntry(event.target.value);
+
   const cancelEdit = () => {
     changeEdit();
-    setEntry(journal_entry);
+    setSavedEntry(entry);
   }
 
-  const saveEntry = (updatedEntry, id) => {
-    updateEntry(updatedEntry, id);
+  const saveEntry = () => {
+    updateEntry(savedEntry, entryID);
+    setEntry(savedEntry);
     changeEdit();
   }
 
-  const showEntry = <p className='journal-text'>{journal_entry}</p>
-  const entryButtons = <div><Link to={'/how-you-felt'} className="uni-btn">←</Link>
-                          <button className="uni-btn" onClick={changeEdit}>update</button></div>
+  const showEntry = <p className='journal-text'>{entry}</p>
+  const entryButtons = <div>
+                          <Link to={'/how-you-felt'} className="uni-btn">←</Link>
+                          <button className="uni-btn" onClick={changeEdit}>update</button>
+                        </div>
 
-  const showForm = <textarea className='journal-content' value={entry} onChange={handleChange}/>
+  const showForm = <textarea className='journal-content' value={savedEntry} onChange={handleChange}/>
   const formButtons = <div>
                         <button className="uni-btn" onClick={cancelEdit}>cancel</button>
-                        <button className="uni-btn" onClick={() => {
-                          saveEntry(entry, entryID);
-                        }}>save</button>
+                        <button className="uni-btn" onClick={saveEntry}>save</button>
                       </div>
 
   return (
