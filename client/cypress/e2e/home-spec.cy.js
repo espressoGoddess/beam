@@ -1,9 +1,5 @@
 describe('Home page', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:3001/api/v1/entries', {
-      statusCode: 200,
-      fixture: 'entries.json'
-    })
     cy.visit('http://localhost:3000/')
   })
 

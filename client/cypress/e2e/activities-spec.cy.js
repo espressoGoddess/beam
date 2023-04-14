@@ -1,11 +1,18 @@
 describe('Activities page', () => {
   beforeEach(() => {
+    cy.intercept('POST', 'http://localhost:3001/api/v1/entries', {
+      statusCode: 201,
+      fixture: 'entry.json'
+    })
+    cy.intercept('GET', 'http://localhost:3001/api/v1/entries', {
+      statusCode: 200,
+      fixture: 'entries.json'
+    })
     cy.visit('http://localhost:3000/')
     cy.get('.uni-btn').click()
     cy.get('.feelings-container > :nth-child(4)').click()
-    cy.get('#journal-entry').type('Im feeling anxious because I have a big project due this weekend.')
+    cy.get('#journal-entry').type('Howdy.')
     cy.get('.uni-btn').click()
-
   })
 
   it('Should display the header and the activity page', () => {
