@@ -14,7 +14,7 @@
   height: fit-content;
   cursor: pointer;
   text-decoration: none;
-  transition: white .5s;
+  transition: background-color .5s ease;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   color: black;

@@ -22,6 +22,7 @@
   border-radius: 65%;
   font-family: 'Playfair Display SC', serif;
   color: white;
+  cursor: default;
 }
 
 h2 {
@@ -41,4 +42,10 @@ h2 {
   text-align: center;
   line-height: 1.5rem;
   margin: 0px;
+}
+
+.blurb-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
