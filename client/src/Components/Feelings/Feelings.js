@@ -1,5 +1,6 @@
 import React from 'react';
 import './Feelings.css';
+import PropTypes from 'prop-types';
 import feelingsData from './feelingsData';
 import { Link } from 'react-router-dom';
 
@@ -26,3 +27,7 @@ const Feelings = ({ setFeeling }) => {
 }
 
 export default Feelings;
+
+Feelings.propTypes = {
+  setFeeling: PropTypes.func.isRequired
+}

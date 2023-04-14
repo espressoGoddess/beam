@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Activities.css';
+import PropTypes from 'prop-types';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 const Activities = ({ activities, addEntry, setFeeling }) => {
@@ -37,3 +38,13 @@ const Activities = ({ activities, addEntry, setFeeling }) => {
 }
 
 export default Activities;
+
+Activities.propTypes = {
+  activities: PropTypes.arrayOf(PropTypes.shape({
+    activityId: PropTypes.number,
+    activity: PropTypes.string.isRequired,
+    feelings: PropTypes.array
+  })),
+  addEntry: PropTypes.func.isRequired,
+  setFeeling: PropTypes.func.isRequired
+}
