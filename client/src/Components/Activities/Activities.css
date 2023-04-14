@@ -2,6 +2,13 @@ html {
   font-family: var(--font-family);
 }
 
+.activity-blurb {
+  margin-top: 10%;
+  color: var(--font-color-purp);
+  background-color: var(--element-bkgd-color);
+  border-radius: var(--border-radius);
+}
+
 .activity-card h2 {
   margin: 10px;
   font-size: xx-large;
@@ -15,19 +22,25 @@ html {
   cursor: pointer;
 }
 
+.button-container {
+  width: 3vw;
+  height: 100%;
+  display: flex;
+}
+
 .activity-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 365px;
+  height: 20vh;
   width: 50%;
-  margin-top: 10%;
   margin-bottom: 2%;
   padding: 30px;
   background-color: white;
   font-family: var(--font-family);
   border-radius: 2px;
+  text-align: center;
 }
 
 .activity-page {

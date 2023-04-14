@@ -2,6 +2,7 @@
   --element-bkgd-color: rgba(255,255,255, .4);
   --border-radius: 2px;
   --font-family: 'Plus Jakarta Sans', sans-serif;
+  --font-color-purp: rgb(167, 100, 243);
 }
 
 .uni-btn {

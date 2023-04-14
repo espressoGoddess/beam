@@ -27,10 +27,15 @@ const Activities = ({ activities, addEntry, setFeeling }) => {
 
   return (
     <section className="activity-page">
+      <p className="activity-blurb">Here are a few activites that might meet you where you are...</p>
       <div className="activity-card">
-        {currentActivityIndex > 0 && <button className="activities-btns" onClick={prevActivity}>←</button>}
+        <div className="button-container">
+          {currentActivityIndex > 0 && <button className="activities-btns" onClick={prevActivity}>←</button>}
+        </div>
         <h2>{activities[currentActivityIndex]?.activity}</h2>
-        {currentActivityIndex < activities.length - 1 && <button className="activities-btns" onClick={nextActivity}>→</button>}
+        <div className="button-container">
+          {currentActivityIndex < activities.length - 1 && <button className="activities-btns" onClick={nextActivity}>→</button>}
+        </div>
       </div>
       <Link to="/how-you-felt" className="uni-btn" onClick={selectActivity}>Let's do it!</Link>
     </section>
