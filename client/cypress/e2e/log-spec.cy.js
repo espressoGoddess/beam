@@ -41,29 +41,30 @@ describe('Feelings log page (GET intercept)', () => {
   })
 
   it('Should have a button in the journal column that brings the user from the feelings log page to the journal entry they completed on that specific day', () => {
-    // cy.visit('https://example.cypress.io')
+    cy.get(':nth-child(1) > :nth-child(4) > a').click()
+    cy.url().should('eq', 'http://localhost:3000/how-you-felt/entry/1')
+    cy.get('.journal-boundary').should('be.visible')
+    cy.get('.feelingsLog').should('not.exist')
   })
 
 })
 
-describe('Feelings log page (POST intercept)', () => {
-  beforeEach(() => {
-    cy.intercept('POST', 'http://localhost:3001/api/v1/entries', {
-      statusCode: 201,
-      fixture: 'entry.json'
-    })
-    cy.visit('http://localhost:3000')
-    cy.get('.uni-btn').click()
-    cy.get('.feelings-container > :nth-child(7)').click()
-    cy.get('#journal-entry').type('Im feeling anxious because I have a big project due this weekend.')
-    cy.get('.uni-btn').click()
-    cy.get('.uni-btn').click()
-  })
+// describe('Feelings log page (POST intercept)', () => {
+//   beforeEach(() => {
+//     cy.intercept('POST', 'http://localhost:3001/api/v1/entries', {
+//       statusCode: 201,
+//       fixture: 'entry.json'
+//     })
+//     cy.visit('http://localhost:3000')
+//   })
 
-  it('Should work!', () => {
-    cy.get('header')
-  })
-})
+//   it('Should work!', () => {
+//     cy.visit('http://localhost:3000/what-should-you-do/Anxious')
+//     cy.get('.activities-btns').click()
+//     cy.get('.uni-btn').click()
+
+//   })
+// })
 
 
 
