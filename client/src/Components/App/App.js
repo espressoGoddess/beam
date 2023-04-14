@@ -69,7 +69,7 @@ const App = () => {
           if (!journal) {
             return null;
           }
-          return <JournalEntry journal={journal}/>
+          return <JournalEntry journal={journal} entryID={id}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
         <Route path='*'><NotFound /></Route>
