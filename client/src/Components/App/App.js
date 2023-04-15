@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { getAllEntries, addNewEntry } from '../../utilities/api-calls';
 import activityData from '../../sampleData/activityData';
 import feelingsData from '../Feelings/feelingsData';
@@ -72,7 +72,8 @@ const App = () => {
           return <JournalEntry journal={journal} entryID={id}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
-        <Route path='*'><NotFound /></Route>
+        <Route exact path='/404'><NotFound /></Route>
+        <Route path='*'><Redirect to='/404'/></Route>
       </Switch>
     </main>
   )
