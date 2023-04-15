@@ -2,9 +2,9 @@ import React from 'react';
 import './FeelingsLog.css';
 import { DateTime } from 'luxon';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const FeelingsLog = ({logs}) => {
-
   const toTitleCase = (item) => {
     return `${ item.slice(0, 1).toUpperCase() }${ item.slice(1) }`;
   }
@@ -39,9 +39,21 @@ const FeelingsLog = ({logs}) => {
         {userLogs}
         </tbody>
       </table>
-
     </section>
   )
 }
 
 export default FeelingsLog;
+
+FeelingsLog.propTypes = {
+  logs: PropTypes.arrayOf(PropTypes.shape({
+    entry_id: PropTypes.number.isRequired,
+    user_id: PropTypes.string,
+    date: PropTypes.string.isRequired,
+    feeling: PropTypes.string.isRequired,
+    journal_entry: PropTypes.string.isRequired,
+    created_at: PropTypes.string,
+    updated_at: PropTypes.string,
+    activity: PropTypes.string.isRequired
+  }))
+}

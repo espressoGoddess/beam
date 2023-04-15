@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
+import PropTypes from 'prop-types';
 import './JournalEntry.css';
 import { updateEntry } from "../../utilities/api-calls";
 
@@ -12,7 +13,6 @@ const JournalEntry = ({ journal, entryID }) => {
   const [savedEntry, setSavedEntry] = useState(journal_entry);
   const [edit, setEdit] = useState(false);
   
-
   const formattedDate = DateTime.fromFormat(date, 'yyyy-MM-dd');
   
   const changeEdit = () => {
@@ -43,7 +43,7 @@ const JournalEntry = ({ journal, entryID }) => {
                         <button className="uni-btn" onClick={cancelEdit}>cancel</button>
                         <button className="uni-btn" onClick={saveEntry}>save</button>
                       </div>
-
+                      
   return (
     <section className='journal-boundary'>
       <div className='journal-entry'>
@@ -61,3 +61,16 @@ const JournalEntry = ({ journal, entryID }) => {
 }
 
 export default JournalEntry;
+
+JournalEntry.propTypes = {
+  journal: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    feeling: PropTypes.string.isRequired,
+    activity: PropTypes.string.isRequired,
+    journal_entry: PropTypes.string.isRequired,
+    entry_id: PropTypes.number,
+    created_at: PropTypes.string,
+    updated_at: PropTypes.string,
+    user_id: PropTypes.string,
+  })
+};
