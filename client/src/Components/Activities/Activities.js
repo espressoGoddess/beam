@@ -9,7 +9,7 @@ const Activities = ({ activities, addEntry, setFeeling }) => {
   const { params } = useRouteMatch('/what-should-you-do/:feeling');
   useEffect(() => {
     setFeeling(params.feeling);
-  }, [setFeeling, params.feeling])
+  }, [setFeeling, params.feeling]);
 
   const nextActivity = () => {
     const nextIndex = currentActivityIndex + 1;
@@ -39,7 +39,7 @@ const Activities = ({ activities, addEntry, setFeeling }) => {
       </div>
       <Link to="/how-you-felt" className="uni-btn" onClick={selectActivity}>Let's do it!</Link>
     </section>
-  )
+  );
 }
 
 export default Activities;

@@ -32,7 +32,7 @@ const App = () => {
       feeling: feeling,
       activity: activity,
       journal_entry: journal
-    }
+    };
     addNewEntry(newEntry).then(getAllEntries).then(data => setUserLogs(data));
   }
 
@@ -76,7 +76,7 @@ const App = () => {
         <Route path='*'><Redirect to='/404'/></Route>
       </Switch>
     </main>
-  )
+  );
 }
 
 export default App;
