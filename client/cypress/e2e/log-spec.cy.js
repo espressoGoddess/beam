@@ -49,22 +49,26 @@ describe('Feelings log page (GET intercept)', () => {
 
 })
 
-// describe('Feelings log page (POST intercept)', () => {
-//   beforeEach(() => {
-//     cy.intercept('POST', 'http://localhost:3001/api/v1/entries', {
-//       statusCode: 201,
-//       fixture: 'entry.json'
-//     })
-//     cy.visit('http://localhost:3000')
-//   })
+describe('Feelings log page (POST intercept)', () => {
+  beforeEach(() => {
+    cy.intercept('POST', 'http://localhost:3001/api/v1/entries', {
+      statusCode: 201,
+      fixture: 'entry.json'
+    })
+    cy.intercept('GET', 'http://localhost:3001/api/v1/entries', {
+      statusCode: 200,
+      fixture: 'entry.json'
+    })
+    cy.visit('http://localhost:3000/how-you-felt')
+  })
 
-//   it('Should work!', () => {
-//     cy.visit('http://localhost:3000/what-should-you-do/Anxious')
-//     cy.get('.activities-btns').click()
-//     cy.get('.uni-btn').click()
-
-//   })
-// })
+  it('Should add a new row of data for the most recent entry addition', () => {
+    cy.get('tbody > tr > :nth-child(1)').should('be.visible').contains('Apr 14, 2023')
+    cy.get('tbody > tr > :nth-child(2)').should('be.visible').contains('Anxious')
+    cy.get('tbody > tr > :nth-child(3)').should('be.visible').contains('Go on a sensory walk')
+    cy.get('tbody > tr > :nth-child(4)').should('be.visible').contains('📓')
+  })
+})
 
 
 

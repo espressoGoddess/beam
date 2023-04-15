@@ -8,11 +8,7 @@ describe('Activities page', () => {
       statusCode: 200,
       fixture: 'entries.json'
     })
-    cy.visit('http://localhost:3000/')
-    cy.get('.uni-btn').click()
-    cy.get('.feelings-container > :nth-child(4)').click()
-    cy.get('#journal-entry').type('Howdy.')
-    cy.get('.uni-btn').click()
+    cy.visit('http://localhost:3000/what-should-you-do/Anxious')
   })
 
   it('Should display the header and the activity page', () => {

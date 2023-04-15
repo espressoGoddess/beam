@@ -1,7 +1,6 @@
 describe('Feelings page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
-    cy.get('.uni-btn').click()
+    cy.visit('http://localhost:3000/how-are-you-feeling')
   })
 
   it('Should display the header with the site logo', () => {
