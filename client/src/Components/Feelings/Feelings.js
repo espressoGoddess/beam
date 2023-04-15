@@ -9,12 +9,12 @@ const Feelings = ({ setFeeling }) => {
   const feelingsLinks = feelingsData.map(feelingData => {
     return feelingData.associatedFeelings.map(feel => {
       return <Link to={`/why-are-you-feeling-that-way`} key={feel} className='uni-btn' onClick={()=>setFeeling(feel)}>{feel}</Link>
-    })
+    });
   });
 
   const sortedLinks = feelingsLinks.flat().sort((a, b) => {
     return (a.key > b.key) ? 1 : -1;
-  })
+  });
   
   return (
     <section className='feelings-page'>

@@ -7,11 +7,11 @@ const Header = () => {
     <>
       <header>
         <nav>
-          <p to='/' className='logo'>BEAM</p>
+          <p className='logo'>BEAM</p>
         </nav>
       </header>
     </>   
-  )
+  );
 }
 
 export default Header;

@@ -11,7 +11,7 @@ const JournalPrompt = ( {updateJournal, feeling} ) => {
   const handleClick = () => {
     if (newEntry) {
       updateJournal(newEntry);
-      history.push(`/what-should-you-do/${feeling}`)
+      history.push(`/what-should-you-do/${feeling}`);
     } else {
       setError(true);
       setTimeout(() => {setError(false)}, 2000);
@@ -27,7 +27,7 @@ const JournalPrompt = ( {updateJournal, feeling} ) => {
         {error ? <p style={{textAlign: 'center'}}> Please tell us a bit more about how you're feeling today - you can always edit it later. 🤍 </p> : null}
       </form>
     </div>
-  )
+  );
 }
 
 export default JournalPrompt;

@@ -14,8 +14,8 @@
     width: 100%;
 }
 
- td,
- th {
+td,
+th {
     padding: .7rem;
     border-bottom: 1px solid var(--border-color);
 }
@@ -31,7 +31,6 @@ th {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 
 table thead tr {
     display: block;

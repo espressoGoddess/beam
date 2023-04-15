@@ -38,7 +38,7 @@ const JournalEntry = ({ journal, entryID }) => {
                           <button className="uni-btn" onClick={changeEdit}>update</button>
                         </div>
 
-  const showForm = <textarea className='journal-content' value={savedEntry} onChange={handleChange}/>
+  const showForm = <textarea className='journal-text-edit' value={savedEntry} onChange={handleChange}/>
   const formButtons = <div>
                         <button className="uni-btn" onClick={cancelEdit}>cancel</button>
                         <button className="uni-btn" onClick={saveEntry}>save</button>
@@ -57,7 +57,7 @@ const JournalEntry = ({ journal, entryID }) => {
         {edit ? formButtons : entryButtons}
       </div>
     </section>
-  )
+  );
 }
 
 export default JournalEntry;
@@ -68,7 +68,7 @@ JournalEntry.propTypes = {
     feeling: PropTypes.string.isRequired,
     activity: PropTypes.string.isRequired,
     journal_entry: PropTypes.string.isRequired,
-    entry_id: PropTypes.number,
+    entry_ID: PropTypes.number,
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
     user_id: PropTypes.string,

@@ -34,7 +34,6 @@ const updateEntry = (updatedEntry, id) => {
   })
   .then(response => {
     if (response.ok) {
-      console.log('RESPONSE', response)
       return response.json();
     } else {
       throw new Error(`HTTP Status Code: ${response.status}`);
