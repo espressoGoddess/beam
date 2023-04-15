@@ -49,9 +49,13 @@ const App = () => {
   }, [feeling]);
 
   useEffect(() => {
+    updateLogs();
+  }, []);
+
+  const updateLogs = () => {
     getAllEntries()
     .then(data => setUserLogs(data));
-  }, []);
+  }
 
   return (
     <main>
@@ -69,7 +73,7 @@ const App = () => {
           if (!journal) {
             return null;
           }
-          return <JournalEntry journal={journal} entryID={id}/>
+          return <JournalEntry journal={journal} entryID={id} updateLogs={updateLogs}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
         <Route exact path='/404'><NotFound /></Route>

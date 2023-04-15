@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './JournalEntry.css';
 import { updateEntry } from "../../utilities/api-calls";
 
-const JournalEntry = ({ journal, entryID }) => {
+const JournalEntry = ({ journal, entryID, updateLogs }) => {
 
   const {date, feeling, activity, journal_entry } = journal;
 
@@ -27,7 +27,8 @@ const JournalEntry = ({ journal, entryID }) => {
   }
 
   const saveEntry = () => {
-    updateEntry(savedEntry, entryID);
+    updateEntry(savedEntry, entryID)
+    .then(() => updateLogs());
     setEntry(savedEntry);
     changeEdit();
   }
