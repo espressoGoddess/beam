@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { getAllEntries, addNewEntry } from '../../utilities/api-calls';
+import { fetchCall } from '../../utilities/api-calls';
 import activityData from '../../sampleData/activityData';
 import feelingsData from '../Feelings/feelingsData';
 import Home from '../Home/Home';
@@ -33,7 +33,7 @@ const App = () => {
       activity: activity,
       journal_entry: journal
     };
-    addNewEntry(newEntry).then(getAllEntries).then(data => setUserLogs(data));
+    fetchCall(newEntry).then(updateLogs);
   }
 
   const filterActivities = () => {
@@ -53,7 +53,7 @@ const App = () => {
   }, []);
 
   const updateLogs = () => {
-    getAllEntries()
+    fetchCall()
     .then(data => setUserLogs(data));
   }
 

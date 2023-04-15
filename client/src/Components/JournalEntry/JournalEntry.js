@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
 import PropTypes from 'prop-types';
 import './JournalEntry.css';
-import { updateEntry } from "../../utilities/api-calls";
+import { fetchCall } from "../../utilities/api-calls";
 
 const JournalEntry = ({ journal, entryID, updateLogs }) => {
 
@@ -27,7 +27,7 @@ const JournalEntry = ({ journal, entryID, updateLogs }) => {
   }
 
   const saveEntry = () => {
-    updateEntry(savedEntry, entryID)
+    fetchCall(savedEntry, entryID)
     .then(() => updateLogs());
     setEntry(savedEntry);
     changeEdit();
