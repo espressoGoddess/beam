@@ -2,6 +2,7 @@
   --element-bkgd-color: rgba(255,255,255, .4);
   --border-radius: 2px;
   --font-family: 'Plus Jakarta Sans', sans-serif;
+  --font-color-purp: rgb(167, 100, 243);
 }
 
 .uni-btn {
@@ -13,7 +14,7 @@
   height: fit-content;
   cursor: pointer;
   text-decoration: none;
-  transition: white .5s;
+  transition: background-color .5s ease;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   color: black;
