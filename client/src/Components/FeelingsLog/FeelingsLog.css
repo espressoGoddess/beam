@@ -25,13 +25,17 @@ th {
     text-align: left;
 }
 
+.fa-solid {
+    color: black;
+    font-size: 1.3rem;
+}
+
 .truncate {
     max-width: 450px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 
 table thead tr {
     display: block;

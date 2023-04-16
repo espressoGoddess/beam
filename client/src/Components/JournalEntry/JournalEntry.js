@@ -6,14 +6,16 @@ import './JournalEntry.css';
 import { updateEntry } from "../../utilities/api-calls";
 
 const JournalEntry = ({ journal, entryID }) => {
-
   const {date, feeling, activity, journal_entry } = journal;
-
   const [entry, setEntry] = useState(journal_entry);
   const [savedEntry, setSavedEntry] = useState(journal_entry);
   const [edit, setEdit] = useState(false);
   
   const formattedDate = DateTime.fromFormat(date, 'yyyy-MM-dd');
+ 
+  const cancelBtn = <i class="fa-solid fa-circle-xmark"></i>;
+  const editBtn = <i class="fa-solid fa-pencil"></i>;
+  const saveBtn = <i class="fa-solid fa-check"></i>;
   
   const changeEdit = () => {
     setEdit(!edit);
@@ -34,14 +36,14 @@ const JournalEntry = ({ journal, entryID }) => {
 
   const showEntry = <p className='journal-text'>{entry}</p>
   const entryButtons = <div>
-                          <Link to={'/how-you-felt'} className="uni-btn">←</Link>
-                          <button className="uni-btn" onClick={changeEdit}>update</button>
+                          <Link to={'/how-you-felt'} className="uni-btn"><i class="fa-solid fa-arrow-left-long"></i></Link>
+                          <button className="uni-btn" onClick={changeEdit}>{editBtn}</button>
                         </div>
 
   const showForm = <textarea className='journal-content' value={savedEntry} onChange={handleChange}/>
   const formButtons = <div>
-                        <button className="uni-btn" onClick={cancelEdit}>cancel</button>
-                        <button className="uni-btn" onClick={saveEntry}>save</button>
+                        <button className="uni-btn" onClick={cancelEdit}>{cancelBtn}</button>
+                        <button className="uni-btn" onClick={saveEntry}>{saveBtn}</button>
                       </div>
                       
   return (
