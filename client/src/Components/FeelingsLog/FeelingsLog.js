@@ -20,7 +20,7 @@ const FeelingsLog = ({logs}) => {
     return (<tr key={log.entry_id}>
         <td>{log.date.toLocaleString(DateTime.DATE_MED)}</td>
         <td>{toTitleCase(log.feeling)}</td>
-        <td>{log.activity}</td>
+        <td className='truncate'>{log.activity}</td>
         <td>{<Link to={`/how-you-felt/entry/${log.entry_id}`}><i class="fa-solid fa-book"></i></Link>}</td>
       </tr>)
   })
@@ -30,8 +30,8 @@ const FeelingsLog = ({logs}) => {
         <thead>
           <tr>
             <th>Date</th>
-            <th>Feeling</th>
-            <th>Activity</th>
+            <th className='feeling-head'>Feeling</th>
+            <th className='activity-head'>Activity</th>
             <th>Journal</th>
           </tr>
         </thead>
