@@ -39,3 +39,10 @@ body, html {
 * {
   text-decoration: none;
 }
+
+
+button {
+  background-color: rgba(255,255,255, 0);
+  font-family: var( --font-family);
+  font-size: 16px;
+}
