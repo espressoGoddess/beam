@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { getAllEntries, addNewEntry } from '../../utilities/api-calls';
+import { fetchCall } from '../../utilities/api-calls';
 import activityData from '../../sampleData/activityData';
 import feelingsData from '../Feelings/feelingsData';
 import Home from '../Home/Home';
@@ -32,8 +32,8 @@ const App = () => {
       feeling: feeling,
       activity: activity,
       journal_entry: journal
-    }
-    addNewEntry(newEntry).then(getAllEntries).then(data => setUserLogs(data));
+    };
+    fetchCall(newEntry).then(updateLogs);
   }
 
   const filterActivities = () => {
@@ -49,9 +49,13 @@ const App = () => {
   }, [feeling]);
 
   useEffect(() => {
-    getAllEntries()
-    .then(data => setUserLogs(data));
+    updateLogs();
   }, []);
+
+  const updateLogs = () => {
+    fetchCall()
+    .then(data => setUserLogs(data));
+  }
 
   return (
     <main>
@@ -69,14 +73,14 @@ const App = () => {
           if (!journal) {
             return null;
           }
-          return <JournalEntry journal={journal} entryID={id}/>
+          return <JournalEntry journal={journal} entryID={id} updateLogs={updateLogs}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
         <Route exact path='/404'><NotFound /></Route>
         <Route path='*'><Redirect to='/404'/></Route>
       </Switch>
     </main>
-  )
+  );
 }
 
 export default App;

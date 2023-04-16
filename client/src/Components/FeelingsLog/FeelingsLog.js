@@ -22,8 +22,9 @@ const FeelingsLog = ({logs}) => {
         <td>{toTitleCase(log.feeling)}</td>
         <td className='truncate'>{log.activity}</td>
         <td>{<Link to={`/how-you-felt/entry/${log.entry_id}`}><i class="fa-solid fa-book"></i></Link>}</td>
-      </tr>)
-  })
+      </tr>);
+  });
+
   return (
     <section className='feelingsLog'>
       <table>
@@ -40,7 +41,7 @@ const FeelingsLog = ({logs}) => {
         </tbody>
       </table>
     </section>
-  )
+  );
 }
 
 export default FeelingsLog;

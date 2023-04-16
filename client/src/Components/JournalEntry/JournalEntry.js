@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
 import PropTypes from 'prop-types';
 import './JournalEntry.css';
-import { updateEntry } from "../../utilities/api-calls";
+import { fetchCall } from "../../utilities/api-calls";
 
-const JournalEntry = ({ journal, entryID }) => {
+const JournalEntry = ({ journal, entryID, updateLogs }) => {
+
   const {date, feeling, activity, journal_entry } = journal;
   const [entry, setEntry] = useState(journal_entry);
   const [savedEntry, setSavedEntry] = useState(journal_entry);
@@ -29,7 +30,8 @@ const JournalEntry = ({ journal, entryID }) => {
   }
 
   const saveEntry = () => {
-    updateEntry(savedEntry, entryID);
+    fetchCall(savedEntry, entryID)
+    .then(() => updateLogs());
     setEntry(savedEntry);
     changeEdit();
   }
@@ -40,7 +42,7 @@ const JournalEntry = ({ journal, entryID }) => {
                           <button className="uni-btn" onClick={changeEdit}>{editBtn}</button>
                         </div>
 
-  const showForm = <textarea className='journal-content' value={savedEntry} onChange={handleChange}/>
+  const showForm = <textarea className='journal-text-edit' value={savedEntry} onChange={handleChange}/>
   const formButtons = <div>
                         <button className="uni-btn" onClick={cancelEdit}>{cancelBtn}</button>
                         <button className="uni-btn" onClick={saveEntry}>{saveBtn}</button>
@@ -59,7 +61,7 @@ const JournalEntry = ({ journal, entryID }) => {
         {edit ? formButtons : entryButtons}
       </div>
     </section>
-  )
+  );
 }
 
 export default JournalEntry;
@@ -70,7 +72,7 @@ JournalEntry.propTypes = {
     feeling: PropTypes.string.isRequired,
     activity: PropTypes.string.isRequired,
     journal_entry: PropTypes.string.isRequired,
-    entry_id: PropTypes.number,
+    entry_ID: PropTypes.number,
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
     user_id: PropTypes.string,
