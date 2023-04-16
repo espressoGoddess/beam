@@ -22,7 +22,6 @@ describe('Journal prompt spec', () => {
     cy.get('#journal-entry').should('be.visible')
     cy.get('#journal-entry').type('Im feeling anxious because I have a big project due this weekend.')
     cy.get('#journal-entry').should('have.value', 'Im feeling anxious because I have a big project due this weekend.')
-
   })
 
   it('Should display a button that will bring the user from the journal prompt page to the activities page', () => {
