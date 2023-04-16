@@ -1,0 +1,26 @@
+[
+  {
+    "entry_id": 1,
+    "user_id": 1,
+    "date": "2023-04-07",
+    "feeling": "anxious",
+    "activity": "Go on a long walk",    
+    "journal_entry": "Today I am feeling anxious because I have a big test coming up!"
+  },
+  {
+    "entry_id": 2,
+    "user_id": 1,
+    "date": "2023-04-06",
+    "feeling": "mad",
+    "activity": "Lay on the floor",
+    "journal_entry": "Today I am mad because my sister stole my favorite shirt!"
+  },
+  {
+    "entry_id": 3,
+    "user_id": 1,
+    "date": "2023-04-05",
+    "feeling": "happy",
+    "activity": "Call someone you love.",    
+    "journal_entry": "Today I am feeling happy because I got an A on my test."
+  }
+]

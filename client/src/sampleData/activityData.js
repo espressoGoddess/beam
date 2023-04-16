@@ -141,7 +141,7 @@ const activityData = [
   },
   {
     "activityId": 28,
-    "activity": 'write in your journal about what expectations you might have had and how your experience is differing from that projection.',
+    "activity": 'Write in your journal about what expectations you might have had and how your experience is differing from that projection.',
     "feelings": [ 'surprised' ]
   },
   {
