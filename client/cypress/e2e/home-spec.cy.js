@@ -7,8 +7,9 @@ describe('Home page', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('Should display the home page', () => {
+  it('Should onlg display the home page', () => {
     cy.get('.home').should('be.visible')
+    cy.get('header').should('not.exist')
   })
 
   it('Should display the site logo', () => {

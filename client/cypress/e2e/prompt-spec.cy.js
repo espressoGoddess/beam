@@ -26,7 +26,8 @@ describe('Journal prompt spec', () => {
   })
 
   it('Should display a button that will bring the user from the journal prompt page to the activities page', () => {
-    cy.get('.uni-btn').should('be.visible').contains('→').click()
+    cy.get('#journal-entry').type('Im feeling anxious because I have a big project due this weekend.')
+    cy.get('.uni-btn').should('be.visible').click()
     cy.url().should('eq', 'http://localhost:3000/what-should-you-do/Anxious')
   })
 })
