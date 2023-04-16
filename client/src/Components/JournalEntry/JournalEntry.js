@@ -76,5 +76,7 @@ JournalEntry.propTypes = {
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
     user_id: PropTypes.string,
-  })
+  }), 
+  updateLogs: PropTypes.func.isRequired,
+  entryID: PropTypes.string.isRequired
 };
