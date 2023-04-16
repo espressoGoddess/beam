@@ -47,9 +47,13 @@
 
 h3 {
   font-size: 1rem;
-  margin: 0 5rem 0 6rem;
+  margin: 0 6.4vw 0 6.4vw;
 }
 
 p {
   padding: 15px;
+}
+
+.journal-boundary button {
+  background-color: rgba(255,255,255, 0);
 }
