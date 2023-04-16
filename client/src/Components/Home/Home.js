@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <section className='home'>
       <h1 className='logo-home'>BEAM</h1>
-      <p className='uni-btn' onClick={() => setBlurb(!blurb)}>What is Beam?</p>
+      <button className='uni-btn' onClick={() => setBlurb(!blurb)}>What is Beam?</button>
       <div>
         {blurb &&
           <div className='blurb-section'>
