@@ -1,11 +1,11 @@
-describe('template spec', () => {
+describe('Journal entry page', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/entries', {
       statusCode: 200,
       fixture: 'entries.json'
     })
     cy.intercept('PUT', 'http://localhost:3001/api/v1/entries', {
-      
+      statusCode: 204
     })
     cy.visit('http://localhost:3000/how-you-felt/entry/1')
   })
@@ -26,11 +26,25 @@ describe('template spec', () => {
     cy.get('.journal-text').should('be.visible').contains('Today I am feeling anxious because I have a big test coming up!')
   })
 
+  it('Should allow the user to edit their entry', () => {
+    cy.get('button.uni-btn').click()
+    cy.get('.journal-text-edit').should('be.visible').type(' But after I went on a walk I felt much more calm!')
+    cy.get(':nth-child(4) > :nth-child(2)').click()
+    cy.get('.journal-content').should('be.visible').contains('Today I am feeling anxious because I have a big test coming up! But after I went on a walk I felt much more calm!')
+    cy.get('a.uni-btn').click()
+  })
+
+  it('Should allow the use to cancel a journal entry edit and return the entry entry to its previous value', () => {
+    cy.get('button.uni-btn').click()
+    cy.get('.journal-text-edit').should('be.visible').type(' But after I went on a walk I felt much more calm!')
+    cy.get(':nth-child(4) > :nth-child(1)').click()
+    cy.get('.journal-content').should('be.visible').contains('Today I am feeling anxious because I have a big test coming up')
+  })
+
   it('Should display a button that brings the user from the entry page back to the log page', () => {
-    cy.get('.uni-btn').click()
+    cy.get('a.uni-btn').click()
     cy.url().should('eq', 'http://localhost:3000/how-you-felt')
     cy.get('.journal-boundary').should('not.exist')
     cy.get('.feelingsLog').should('be.visible')
   })
-
 })
