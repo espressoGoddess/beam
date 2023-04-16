@@ -21,7 +21,7 @@ const FeelingsLog = ({logs}) => {
         <td>{log.date.toLocaleString(DateTime.DATE_MED)}</td>
         <td>{toTitleCase(log.feeling)}</td>
         <td className='truncate'>{log.activity}</td>
-        <td>{<Link to={`/how-you-felt/entry/${log.entry_id}`}><i class="fa-solid fa-book"></i></Link>}</td>
+        <td>{<Link to={`/how-you-felt/entry/${log.entry_id}`}><i className="fa-solid fa-book"></i></Link>}</td>
       </tr>);
   });
 
