@@ -4,6 +4,9 @@ describe('template spec', () => {
       statusCode: 200,
       fixture: 'entries.json'
     })
+    cy.intercept('PUT', 'http://localhost:3001/api/v1/entries', {
+      
+    })
     cy.visit('http://localhost:3000/how-you-felt/entry/1')
   })
 

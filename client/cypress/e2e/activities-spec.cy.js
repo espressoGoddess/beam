@@ -29,9 +29,12 @@ describe('Activities page', () => {
   })
 
   it('Should display a button that selects the current activity and brings the user from the activities page to the log page', () => {
+    cy.intercept('GET', 'http://localhost:3001/api/v1/entries', {
+      statusCode: 200,
+      fixture: 'postEntries.json'
+    })
     cy.get('.uni-btn').click()
     cy.get('.activity-page').should('not.exist')
     cy.url().should('eq', 'http://localhost:3000/how-you-felt')
   })
-
 })
