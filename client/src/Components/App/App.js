@@ -14,7 +14,7 @@ import NotFound from '../NotFound/NotFound';
 import './App.css';
 
 const App = () => {
-  const [user, setUser] = useState({id: 1, name: 'KB'});
+  const [user, setUser] = useState({});
   const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
   const [journal, setJournal] = useState('');
@@ -33,7 +33,10 @@ const App = () => {
       activity: activity,
       journal_entry: journal
     };
-    fetchCall(newEntry).then(updateLogs);
+    fetchCall(newEntry).then(() => {
+      updateLogs();
+      setUser({id: 1, name: 'KB'});
+    });
   }
 
   const filterActivities = () => {
