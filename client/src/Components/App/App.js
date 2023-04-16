@@ -33,10 +33,7 @@ const App = () => {
       activity: activity,
       journal_entry: journal
     };
-    fetchCall(newEntry).then(() => {
-      updateLogs();
-      setUser({id: 1, name: 'KB'});
-    });
+    fetchCall(newEntry).then(updateLogs);
   }
 
   const filterActivities = () => {
@@ -57,14 +54,17 @@ const App = () => {
 
   const updateLogs = () => {
     fetchCall()
-    .then(data => setUserLogs(data));
+    .then(data => {
+      setUserLogs(data);
+      setUser({id: 1, name: 'KB'});
+    });
   }
 
   return (
     <main>
       <Header user={user}/>
       <Switch>
-        <Route exact path='/'><Home /></Route>
+        <Route exact path='/'>{<Home />}</Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
         <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt feeling={feeling} updateJournal={saveNewEntry}/></Route>
         <Route exact path={'/what-should-you-do/:feeling'}>
