@@ -21,6 +21,10 @@ const App = () => {
   const [filteredActivities, setFilteredActivities] = useState([]);
   const [error, setError] = useState('');
 
+  const resetError = () => {
+    setError('')
+  }
+
   const saveNewEntry = (newEntry) => {
     setJournal(newEntry);
   }
@@ -66,7 +70,7 @@ const App = () => {
   return (
     <main>
       <Header user={user}/>
-      {error ? <NotFound err={error}/> :
+      {error ? <NotFound err={error} resetError={resetError}/> :
       <Switch>
         <Route exact path='/'>{<Home />}</Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
