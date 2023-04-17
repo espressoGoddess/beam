@@ -85,7 +85,8 @@ const App = () => {
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
         <Route exact path='/404'><NotFound /></Route>
         <Route path='*'><Redirect to='/404'/></Route>
-      </Switch>}
+      </Switch>
+      }
     </main>
   );
 }

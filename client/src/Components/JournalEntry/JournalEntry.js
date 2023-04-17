@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './JournalEntry.css';
 import { fetchCall } from "../../utilities/api-calls";
 
-const JournalEntry = ({ journal, entryID, updateLogs }) => {
+const JournalEntry = ({ journal, entryID, updateLogs, setError }) => {
 
   const {date, feeling, activity, journal_entry } = journal;
   const [entry, setEntry] = useState(journal_entry);
@@ -14,9 +14,9 @@ const JournalEntry = ({ journal, entryID, updateLogs }) => {
   
   const formattedDate = DateTime.fromFormat(date, 'yyyy-MM-dd');
  
-  const cancelBtn = <i class="fa-solid fa-circle-xmark"></i>;
-  const editBtn = <i class="fa-solid fa-pencil"></i>;
-  const saveBtn = <i class="fa-solid fa-check"></i>;
+  const cancelBtn = <i className="fa-solid fa-circle-xmark"></i>;
+  const editBtn = <i className="fa-solid fa-pencil"></i>;
+  const saveBtn = <i className="fa-solid fa-check"></i>;
   
   const changeEdit = () => {
     setEdit(!edit);
@@ -31,14 +31,15 @@ const JournalEntry = ({ journal, entryID, updateLogs }) => {
 
   const saveEntry = () => {
     fetchCall(savedEntry, entryID)
-    .then(() => updateLogs());
+    .then(() => updateLogs())
+    .catch(err => setError(err));
     setEntry(savedEntry);
     changeEdit();
   }
 
   const showEntry = <p className='journal-text'>{entry}</p>
   const entryButtons = <div>
-                          <Link to={'/how-you-felt'} className="uni-btn"><i class="fa-solid fa-arrow-left-long"></i></Link>
+                          <Link to={'/how-you-felt'} className="uni-btn"><i className="fa-solid fa-arrow-left-long"></i></Link>
                           <button className="uni-btn" onClick={changeEdit}>{editBtn}</button>
                         </div>
 
@@ -72,9 +73,12 @@ JournalEntry.propTypes = {
     feeling: PropTypes.string.isRequired,
     activity: PropTypes.string.isRequired,
     journal_entry: PropTypes.string.isRequired,
-    entry_ID: PropTypes.number,
+    entry_id: PropTypes.number,
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
     user_id: PropTypes.string,
-  })
+  }),
+  updateLogs: PropTypes.func,
+  setError: PropTypes.func,
+  entryID: PropTypes.string
 };
