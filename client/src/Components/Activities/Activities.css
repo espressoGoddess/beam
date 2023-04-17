@@ -12,6 +12,7 @@ html {
 .activity-card h2 {
   margin: 10px;
   font-size: xx-large;
+  max-width: 40vw;
 }
 
 .activities-btns {

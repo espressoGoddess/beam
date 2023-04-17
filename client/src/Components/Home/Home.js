@@ -10,7 +10,7 @@ const Home = () => {
       <h1 className='logo-home'>BEAM</h1>
         <Link to='/how-are-you-feeling' className='uni-btn'>Let&apos;s dig in.</Link>
         <div className='learn-more'>
-      <p className='whats-beam' onClick={() => setBlurb(!blurb)}>What is Beam?{!blurb ? <i className="fa-solid fa-angle-down"></i> : <i className="fa-solid fa-angle-up"></i>}</p>
+          <p className='whats-beam' onClick={() => setBlurb(!blurb)}>What is Beam?{!blurb ? <i className="fa-solid fa-angle-down"></i> : <i className="fa-solid fa-angle-up"></i>}</p>
         </div>
       <div>
         {blurb &&
