@@ -12,10 +12,9 @@ const fetchCall = (entry, id) => {
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error(`HTTP Status Code: ${response.status}`);
+      throw new Error(response.status);
     }
   })
-  .catch(error => console.log(error));
 }
 
 export { fetchCall };

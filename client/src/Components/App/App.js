@@ -14,11 +14,12 @@ import NotFound from '../NotFound/NotFound';
 import './App.css';
 
 const App = () => {
-  const [user, setUser] = useState({id: 1, name: 'KB'});
+  const [user, setUser] = useState({});
   const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
   const [journal, setJournal] = useState('');
   const [filteredActivities, setFilteredActivities] = useState([]);
+  const [error, setError] = useState('');
 
   const saveNewEntry = (newEntry) => {
     setJournal(newEntry);
@@ -33,7 +34,8 @@ const App = () => {
       activity: activity,
       journal_entry: journal
     };
-    fetchCall(newEntry).then(updateLogs);
+    fetchCall(newEntry).then(updateLogs)
+    .catch(err => setError(err));
   }
 
   const filterActivities = () => {
@@ -46,6 +48,7 @@ const App = () => {
 
   useEffect(() => {
     filterActivities();
+    setUser({id: 1, name: 'KB'});
   }, [feeling]);
 
   useEffect(() => {
@@ -54,12 +57,16 @@ const App = () => {
 
   const updateLogs = () => {
     fetchCall()
-    .then(data => setUserLogs(data));
+    .then(data => setUserLogs(data))
+    .catch(err => {
+      setError(err);
+    });
   }
 
   return (
     <main>
       <Header user={user}/>
+      {error ? <NotFound err={error}/> :
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
@@ -73,12 +80,12 @@ const App = () => {
           if (!journal) {
             return null;
           }
-          return <JournalEntry journal={journal} entryID={id} updateLogs={updateLogs}/>
+          return <JournalEntry journal={journal} entryID={id} updateLogs={updateLogs} setError={setError}/>
         }}/>
         <Route exact path='/how-you-felt'><FeelingsLog logs={userLogs}/></Route>
         <Route exact path='/404'><NotFound /></Route>
         <Route path='*'><Redirect to='/404'/></Route>
-      </Switch>
+      </Switch>}
     </main>
   );
 }
