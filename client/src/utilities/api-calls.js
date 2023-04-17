@@ -1,6 +1,6 @@
 const fetchCall = (entry, id) => {
   const method = entry && id ? "PUT" : entry ? "POST" : "GET";
-  const body = entry?.date ? entry : entry ? {journal_entry: entry} : null;
+  const body = entry?.date ? entry : entry && {journal_entry: entry};
   const path = id ? `/${id}` : '';
 
   return fetch(`http://localhost:3001/api/v1/entries${path}`, {
