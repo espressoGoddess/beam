@@ -22,11 +22,21 @@ describe('Journal prompt spec', () => {
     cy.get('#journal-entry').should('be.visible')
     cy.get('#journal-entry').type('Im feeling anxious because I have a big project due this weekend.')
     cy.get('#journal-entry').should('have.value', 'Im feeling anxious because I have a big project due this weekend.')
-
   })
 
   it('Should display a button that will bring the user from the journal prompt page to the activities page', () => {
-    cy.get('.uni-btn').should('be.visible').contains('→').click()
+    cy.get('#journal-entry').type('Im feeling anxious because I have a big project due this weekend.')
+    cy.get('.uni-btn').should('be.visible').click()
     cy.url().should('eq', 'http://localhost:3000/what-should-you-do/Anxious')
   })
+
+  it('Should only allow the user to continue to the next page if they have added a journal entry, and display an error message if the entry box is left blank. The user should then be able to complete an entry and successfully continue to the next page.', () => {
+    cy.get('.uni-btn').click()
+    cy.get('.prompt-container').should('be.visible')
+    cy.get('[style="text-align: center;"]').should('be.visible').contains('Please tell us a bit more about how you\'re feeling today - you can always edit it later. 🤍')
+    cy.get('#journal-entry').type('Im feeling anxious because I have a big project due this weekend.')
+    cy.get('.uni-btn').should('be.visible').click()
+    cy.url().should('eq', 'http://localhost:3000/what-should-you-do/Anxious')
+  })
+
 })

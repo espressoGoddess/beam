@@ -68,7 +68,7 @@ const App = () => {
       <Header user={user}/>
       {error ? <NotFound err={error}/> :
       <Switch>
-        <Route exact path='/'><Home /></Route>
+        <Route exact path='/'>{<Home />}</Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
         <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt feeling={feeling} updateJournal={saveNewEntry}/></Route>
         <Route exact path={'/what-should-you-do/:feeling'}>
