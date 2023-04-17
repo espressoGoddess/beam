@@ -14,7 +14,7 @@ import NotFound from '../NotFound/NotFound';
 import './App.css';
 
 const App = () => {
-  const [user, setUser] = useState({id: 1, name: 'KB'});
+  const [user, setUser] = useState({});
   const [userLogs, setUserLogs] = useState([]);
   const [feeling, setFeeling] = useState('');
   const [journal, setJournal] = useState('');
@@ -54,14 +54,17 @@ const App = () => {
 
   const updateLogs = () => {
     fetchCall()
-    .then(data => setUserLogs(data));
+    .then(data => {
+      setUserLogs(data);
+      setUser({id: 1, name: 'KB'});
+    });
   }
 
   return (
     <main>
       <Header user={user}/>
       <Switch>
-        <Route exact path='/'><Home /></Route>
+        <Route exact path='/'>{<Home />}</Route>
         <Route exact path='/how-are-you-feeling'><Feelings setFeeling={setFeeling}/></Route>
         <Route exact path='/why-are-you-feeling-that-way'><JournalPrompt feeling={feeling} updateJournal={saveNewEntry}/></Route>
         <Route exact path={'/what-should-you-do/:feeling'}>

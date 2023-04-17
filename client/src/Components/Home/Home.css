@@ -12,13 +12,13 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  border: 1px solid white;
+  border: 2px solid white;
   font-size: 225px;
   margin: 20px;
   padding: 20px;
   padding-top: 0;
-  height: 20vh;
-  width: 40vw;
+  height: 200px;
+  width: 700px;
   border-radius: 65%;
   font-family: 'Playfair Display SC', serif;
   color: white;

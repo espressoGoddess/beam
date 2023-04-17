@@ -64,14 +64,18 @@ table tbody {
 
 tbody::-webkit-scrollbar {
     width: 7px;
-  }
-  
-  tbody::-webkit-scrollbar-track {
+}
+
+tbody::-webkit-scrollbar-track {
     background-color: var(--element-bkgd-color); 
-  }
-  
-  tbody::-webkit-scrollbar-thumb {
+}
+
+tbody::-webkit-scrollbar-thumb {
     background-color: var(--element-bkgd-color);
     border-radius: 20px;
     border: solid rgba(255,255,255, .5);
-  }
+}
+
+.journal {
+    padding: 0 0 0 1rem;
+}

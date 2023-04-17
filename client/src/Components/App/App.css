@@ -31,11 +31,18 @@ body, html {
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   text-decoration: none;
   overflow: scroll;
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
+  overflow-x: hidden;
+  overflow-y: hidden;
   font-family: var(--font-family);
 }
 
 * {
   text-decoration: none;
+}
+
+
+button {
+  background-color: rgba(255,255,255, 0);
+  font-family: var( --font-family);
+  font-size: 16px;
 }
