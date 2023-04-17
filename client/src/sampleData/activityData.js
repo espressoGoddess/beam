@@ -121,7 +121,7 @@ const activityData = [
   },
   {
     "activityId": 24,
-    "activity": "Call someone you haven't spoke with in a long time.",
+    "activity": "Call someone you haven't spoken with in a long time.",
     "feelings": [ 'happy' ]
   },
   {

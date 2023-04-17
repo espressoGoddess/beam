@@ -1,6 +1,6 @@
 const fetchCall = (entry, id) => {
   const method = entry && id ? "PUT" : entry ? "POST" : "GET";
-  const body = entry?.date ? entry : entry ? {journal_entry: entry} : null;
+  const body = entry?.date ? entry : entry && {journal_entry: entry};
   const path = id ? `/${id}` : '';
 
   return fetch(`http://localhost:3001/api/v1/entries${path}`, {
@@ -12,10 +12,9 @@ const fetchCall = (entry, id) => {
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error(`HTTP Status Code: ${response.status}`);
+      throw new Error(response.status);
     }
   })
-  .catch(error => console.log(error));
 }
 
 export { fetchCall };

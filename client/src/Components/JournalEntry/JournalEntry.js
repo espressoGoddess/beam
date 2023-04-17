@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './JournalEntry.css';
 import { fetchCall } from "../../utilities/api-calls";
 
-const JournalEntry = ({ journal, entryID, updateLogs }) => {
+const JournalEntry = ({ journal, entryID, updateLogs, setError }) => {
 
   const {date, feeling, activity, journal_entry } = journal;
   const [entry, setEntry] = useState(journal_entry);
@@ -31,7 +31,8 @@ const JournalEntry = ({ journal, entryID, updateLogs }) => {
 
   const saveEntry = () => {
     fetchCall(savedEntry, entryID)
-    .then(() => updateLogs());
+    .then(() => updateLogs())
+    .catch(err => setError(err));
     setEntry(savedEntry);
     changeEdit();
   }
@@ -72,11 +73,12 @@ JournalEntry.propTypes = {
     feeling: PropTypes.string.isRequired,
     activity: PropTypes.string.isRequired,
     journal_entry: PropTypes.string.isRequired,
-    entry_ID: PropTypes.number,
+    entry_id: PropTypes.number,
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
     user_id: PropTypes.string,
-  }), 
-  updateLogs: PropTypes.func.isRequired,
-  entryID: PropTypes.string.isRequired
+  }),
+  updateLogs: PropTypes.func,
+  setError: PropTypes.func,
+  entryID: PropTypes.string
 };
