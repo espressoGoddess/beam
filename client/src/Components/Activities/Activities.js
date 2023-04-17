@@ -37,7 +37,7 @@ const Activities = ({ activities, addEntry, setFeeling }) => {
           {currentActivityIndex < activities.length - 1 && <button className="activities-btns" onClick={nextActivity}><i className="fa-solid fa-arrow-right-long"></i></button>}
         </div>
       </div>
-      <Link to="/how-you-felt" className="uni-btn" onClick={selectActivity}>Let's do it!</Link>
+      <Link to="/how-you-felt" className="uni-btn" onClick={selectActivity}>Let&apos;s do it!</Link>
     </section>
   );
 }
