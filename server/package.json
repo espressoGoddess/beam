@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "npm run migrate && NODE_ENV=development nodemon server.js",
+    "start:prod": "npm run migrate:prod && NODE_ENV=production nodemon server.js",
+    "migrate": "NODE_ENV=development knex migrate:latest",
+    "migrate:prod": "NODE_ENV=production knex migrate:latest"
   },
   "keywords": [],
   "author": "",
