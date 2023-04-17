@@ -77,5 +77,4 @@ describe('Feelings page', () => {
     cy.get('header').should('be.visible')
     cy.url().should('eq', 'http://localhost:3000/why-are-you-feeling-that-way')
   })
-
 })
