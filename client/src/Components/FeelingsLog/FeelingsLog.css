@@ -31,6 +31,7 @@ th {
 }
 
 .truncate {
+    width: 450px;
     max-width: 450px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -77,5 +78,5 @@ tbody::-webkit-scrollbar-thumb {
 }
 
 .journal {
-    padding: 0 0 0 1rem;
+    padding: 0 0 0 2rem;
 }

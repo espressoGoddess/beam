@@ -3,7 +3,7 @@ const fetchCall = (entry, id) => {
   const body = entry?.date ? entry : entry && {journal_entry: entry};
   const path = id ? `/${id}` : '';
 
-  return fetch(`http://localhost:3001/api/v1/entries${path}`, {
+  return fetch(`https://beam-your-feelings-api.herokuapp.com/api/v1/entries${path}`, {
     method: method, 
     headers: { 'Content-Type': 'application/json'},
     body: body && JSON.stringify(body)
