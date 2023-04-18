@@ -13,7 +13,7 @@ Beam is a self-care application intended to help the user work through any kind 
 [//]: <>
 
 #### Deployed Link:
-[BEAM](TBD)
+[BEAM](https://beam-77cbwxdua-espressogoddess.vercel.app/)
 
 #### Local Installation:
 1. Fork this repository.
