@@ -15,14 +15,14 @@ Beam is a self-care application intended to help the user work through any kind 
 #### Deployed Link:
 [BEAM](https://beam-pearl.vercel.app/)
 
+##### OR
+
 #### Local Installation:
 1. Fork this repository.
 2. Create a local repository.
 3. Follow the Github on-screen commands to connect your local repository to your newly forked repository.
 4. Change directories into `client` and run `npm install`, then `npm start` to start the application locally.
-5. Change directories into `server` and run `npm install` then `nodemon server.js` to start the server locally
-	1. **NOTE** - Running the server locally requires you to have a PostreSQL database created and configured locally with a table named `entries`. Once you have that set up, you can edit the `development` object within `knexfile.js` to use your correct `user` and `password` information. Once this has been updated, you can use the commands `npx knex migrate:latest` to migrate the latest schema to your database, and `npx knex seed:run` to seed the table with data.
-6. Navigate to `http://localhost:3000` in your browser to use the application. 
+5. Navigate to `http://localhost:3000` in your browser to use the application. 
   
 
 ## Preview of App:
