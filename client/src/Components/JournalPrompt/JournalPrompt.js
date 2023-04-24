@@ -22,7 +22,7 @@ const JournalPrompt = ( {updateJournal, feeling} ) => {
     <div className="prompt-container">
       <form>
         <h2 className="prompt">Why are you feeling this way?</h2>
-        <textarea required id="journal-entry" onChange={(event) => setNewEntry(event.target.value)}></textarea>
+        <textarea id="journal-entry" onChange={(event) => setNewEntry(event.target.value)}></textarea>
         <button className="uni-btn" onClick={handleClick}><i className="fa-solid fa-arrow-right-long"></i></button>
         {error ? <p style={{textAlign: 'center'}}> Please tell us a bit more about how you&apos;re feeling today - you can always edit it later. 🤍 </p> : null}
       </form>

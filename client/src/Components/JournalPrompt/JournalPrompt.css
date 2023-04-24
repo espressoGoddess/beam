@@ -25,3 +25,18 @@ textarea {
 .prompt {
   font-family: var(--font-family);
 }
+
+@media screen and (max-width: 40em) {
+  .prompt-container {
+    height: 85vh;
+  }
+
+  form {
+    width: 90%;
+    padding: 2vmin;
+  }
+
+  textarea {
+    height: 75%;
+  }
+}
