@@ -54,3 +54,13 @@ p {
   padding: 15px;
 }
 
+@media screen and (max-width: 40em) {
+  .journal-entry {
+    width: 90vw;
+    height: 85vh;
+  }
+
+  .jrnl {
+    padding: 4vmin 7vmin 4vmin 7vmin!important;
+  }
+}
