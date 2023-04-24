@@ -50,3 +50,29 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 40em) {
+  .activity-page {
+    background-color: var(--element-bkgd-color);
+    height: 85vh
+  }
+  .activity-blurb {
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    font-size: calc(1em + 3vmin);
+  }
+
+  .activity-card {
+    width: 80%;
+  }
+
+  .activity-card h2 {
+    font-size: calc(1em + 1vmin);
+    max-width: 60vw;
+    margin: 0;
+  }
+
+  .activity-page > .uni-btn {
+    padding: 4vmin 7vmin 4vmin 7vmin;
+  }
+}
