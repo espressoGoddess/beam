@@ -12,3 +12,14 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width: 40em) {
+  .notfound-container > .uni-btn {
+    padding: 6vmin 10vmin 6vmin 10vmin;
+  }
+
+  .notfound-header {
+    padding: 3vmin;
+    text-align: center;
+  }
+}
