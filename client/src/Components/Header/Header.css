@@ -16,9 +16,9 @@
   cursor: default;
 }
 
-nav {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (max-width: 40em) {
+  .logo {
+    font-size: 12vmin;
+    margin: 5vmin;
+  }
 }
