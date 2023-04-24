@@ -72,3 +72,45 @@ h2 {
 .learn-more {
   margin-top: 40px;
 }
+@media screen and (max-width: 750px){
+  .logo-home{
+    font-size: 100px;
+    height: 90px;
+    width: 300px;
+  }
+  .blurb{
+     font-size: 15px;
+     text-align: justify;
+     width:80%;
+     height: fit-content;
+     
+     
+  }
+  .blurb-section{
+    height: 800px;
+  }
+      
+}
+@media screen and (max-width: 280px){
+  .logo-home{
+    font-size: 70px;
+    height: 50px;
+    width: 200px;
+  }
+  .blurb{
+    font-size: 10px;
+    text-align: justify;
+    width:80%;
+    height: fit-content;
+ }
+ .blurb-section{
+  height: 800px;
+}
+
+      
+}
+@media screen and (max-width: 1024px){
+  .blurb-section{
+    height: 800px;
+  }
+}
