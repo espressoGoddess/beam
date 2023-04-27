@@ -80,3 +80,11 @@ tbody::-webkit-scrollbar-thumb {
 .journal {
     padding: 0 0 0 2rem;
 }
+
+@media screen and (max-width: 40em) {
+    .feelingsLog {
+        width: 90vw;
+        height: 80vh;
+        overflow: scroll;
+    }
+}

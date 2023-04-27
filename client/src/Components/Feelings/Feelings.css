@@ -18,3 +18,14 @@
   flex-direction: row;
   justify-content: center;
 }
+
+@media screen and (max-width: 40em) {
+  .feelings-container {
+    width: 80%;
+    overflow: scroll;
+  }
+
+  .feelings-container > .uni-btn {
+    padding: 3vmin 5vmin 3vmin 5vmin
+  }
+}

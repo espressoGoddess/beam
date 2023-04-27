@@ -42,6 +42,7 @@ h2 {
   text-align: center;
   line-height: 1.5rem;
   margin: 0px;
+  word-wrap: normal;
 }
 
 .blurb-section {
@@ -66,9 +67,24 @@ h2 {
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   color: black;
-  /* margin-top: 40px; */
 }
 
 .learn-more {
   margin-top: 40px;
+}
+
+@media screen and (max-width: 40em) {
+  .logo-home {
+    font-size: calc(5em + 5vmin);
+    height: 9vh;
+    width: 80vw;
+  }
+
+  .blurb {
+    width: 100%;
+  }
+
+  .blurb-section {
+    padding: 1vmin;
+  }
 }

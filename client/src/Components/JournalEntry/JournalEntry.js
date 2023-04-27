@@ -39,14 +39,14 @@ const JournalEntry = ({ journal, entryID, updateLogs, setError }) => {
 
   const showEntry = <p className='journal-text'>{entry}</p>
   const entryButtons = <div>
-                          <Link to={'/how-you-felt'} className="uni-btn"><i className="fa-solid fa-arrow-left-long"></i></Link>
-                          <button className="uni-btn" onClick={changeEdit}>{editBtn}</button>
+                          <Link to={'/how-you-felt'} className="uni-btn jrnl"><i className="fa-solid fa-arrow-left-long"></i></Link>
+                          <button className="uni-btn jrnl" onClick={changeEdit}>{editBtn}</button>
                         </div>
 
   const showForm = <textarea className='journal-text-edit' value={savedEntry} onChange={handleChange}/>
   const formButtons = <div>
-                        <button className="uni-btn" onClick={cancelEdit}>{cancelBtn}</button>
-                        <button className="uni-btn" onClick={saveEntry}>{saveBtn}</button>
+                        <button className="uni-btn jrnl" onClick={cancelEdit}>{cancelBtn}</button>
+                        <button className="uni-btn jrnl" onClick={saveEntry}>{saveBtn}</button>
                       </div>
                       
   return (
