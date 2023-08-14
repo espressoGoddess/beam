@@ -15,6 +15,10 @@ app.listen(port, () => {
 
 // ROUTES
 
+app.get("/", async (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 app.get("/api/v1/entries", async (req, res) => {
   try {
     const entries = await knex.select().from("entries");
