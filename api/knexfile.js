@@ -4,15 +4,14 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
-
   development: {
-    client: 'pg',
+    client: "pg",
     connection: {
       port: 5432,
       user: "postgres",
-      password: 'postgres',
-      database: "beam_api"
-    }
+      password: "postgres",
+      database: "beam_api",
+    },
   },
 
   // staging: {
@@ -32,19 +31,19 @@ module.exports = {
   // },
 
   production: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false
-      }
+      connectionString: process.env.POSTGRES_URL,
+      // ssl: {
+      //   rejectUnauthorized: false
+      // }
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    // pool: {
+    //   min: 2,
+    //   max: 10,
+    // },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      tableName: "knex_migrations",
+    },
+  },
 };
