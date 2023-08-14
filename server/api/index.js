@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const knex = require("./knex");
+const knex = require("../knex");
 const port = 3001;
 
 app.set("port", port);
@@ -35,11 +35,9 @@ app.post("/api/v1/entries", async (req, res) => {
     "journal_entry",
   ]) {
     if (!newEntry[parameter]) {
-      return res
-        .status(422)
-        .json({
-          message: `You are missing a required parameter of ${parameter}.`,
-        });
+      return res.status(422).json({
+        message: `You are missing a required parameter of ${parameter}.`,
+      });
     }
   }
 
