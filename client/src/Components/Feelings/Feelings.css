@@ -1,10 +1,10 @@
 .feelings-page {
-  height: 100vh;
+  height: fit-content;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 7vh;
 }
 
 .feelings-header {
@@ -12,7 +12,7 @@
 }
 
 .feelings-container {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -22,10 +22,11 @@
 @media screen and (max-width: 40em) {
   .feelings-container {
     width: 80%;
+    overflow-x: visible;
+    overflow-y: visible;
     overflow: scroll;
   }
-
   .feelings-container > .uni-btn {
-    padding: 3vmin 5vmin 3vmin 5vmin
+    padding: 3vmin 5vmin 3vmin 5vmin;
   }
 }

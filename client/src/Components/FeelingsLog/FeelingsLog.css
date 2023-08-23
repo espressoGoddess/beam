@@ -1,90 +1,154 @@
 .feelingsLog {
-    background-color: var(--element-bkgd-color);
-    --border-color: rgb(89, 91, 92);
-    border-radius: var(--border-radius);
-    width: fit-content;
-    margin: 2rem auto 0;
-    margin-top: 10vh;
+  background-color: var(--element-bkgd-color);
+  --border-color: rgb(89, 91, 92);
+  border-radius: var(--border-radius);
+  width: fit-content;
+  margin: 7vh auto 3vh;
+  padding-bottom: 5vh;
 }
 
 .feelingsLog table {
-    border-collapse: collapse;
-    padding: 1.5rem 2rem;
-    display: block;
-    width: 100%;
+  border-collapse: collapse;
+  padding: 1.5rem 2rem;
+  display: block;
+  width: 100%;
+  height: 70vh;
 }
 
 td,
 th {
-    padding: .7rem;
-    border-bottom: 1px solid var(--border-color);
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 th {
-    font-weight: 700;
-    text-align: left;
+  font-weight: 700;
+  text-align: left;
 }
 
 .fa-solid {
-    color: black;
-    font-size: 1.3rem;
+  color: black;
+  font-size: 1.3rem;
 }
 
 .truncate {
-    width: 450px;
-    max-width: 450px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  width: 450px;
+  max-width: 450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 table thead tr {
-    display: block;
+  display: block;
 }
 
 table th,
-table td { 
-    width: 100px; 
-    min-width: 100px; 
+table td {
+  width: 100px;
+  min-width: 100px;
 }
 
 table tbody {
-    display: block;
-    overflow-y: scroll;
-    width: 100%;
-    height: 650px;
+  display: block;
+  overflow-y: scroll;
+  width: 100%;
+  height: 60vh;
 }
 
 .activity-head {
-    width: 450px;
+  width: 450px;
 }
 
 .feeling-head {
-    width: 110px;
+  width: 110px;
 }
 
 tbody::-webkit-scrollbar {
-    width: 7px;
+  width: 7px;
 }
 
 tbody::-webkit-scrollbar-track {
-    background-color: var(--element-bkgd-color); 
+  background-color: var(--element-bkgd-color);
 }
 
 tbody::-webkit-scrollbar-thumb {
-    background-color: var(--element-bkgd-color);
-    border-radius: 20px;
-    border: solid rgba(255,255,255, .5);
+  background-color: var(--element-bkgd-color);
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0.5);
 }
 
 .journal {
-    padding: 0 0 0 2rem;
+  padding: 0 0 0 2rem;
 }
 
 @media screen and (max-width: 40em) {
-    .feelingsLog {
-        width: 90vw;
-        height: 80vh;
-        overflow: scroll;
-    }
+  .feelingsLog {
+    width: 90vw;
+    height: 60vh;
+    /* overflow: scroll; */
+  }
+  table tbody {
+    height: 50vh;
+  }
+  td,
+  th {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+  .truncate {
+    width: 33vw;
+    max-width: 33vw;
+  }
+  table {
+    padding: 0;
+  }
+  table td {
+    width: fit-content;
+    min-width: 50px;
+  }
+  table th {
+    width: 80px;
+    min-width: 80px;
+  }
+  .feeling-head {
+    width: 30vw;
+  }
+  tbody::-webkit-scrollbar {
+    width: 5px;
+  }
+  table {
+    height: 65vh;
+  }
+}
+@media screen and (max-width: 34.5em) {
+  .truncate,
+  .activity-head {
+    display: none;
+  }
+  table td {
+    width: fit-content;
+    min-width: 50px;
+  }
+  table th {
+    width: 80px;
+    min-width: 80px;
+  }
+  .feeling-head {
+    width: 20vw;
+  }
+  .feelingsLog table {
+    width: 70vw;
+  }
+  .feelingsLog {
+    width: 73vw;
+  }
+}
+@media screen and (max-width: 30em) {
+  .feelingsLog {
+    width: 90vw;
+  }
+  .feelingsLog table {
+    width: 90vw;
+  }
 }
