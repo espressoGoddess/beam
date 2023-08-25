@@ -1,7 +1,7 @@
 :root {
-  --element-bkgd-color: rgba(255,255,255, .4);
+  --element-bkgd-color: rgba(255, 255, 255, 0.4);
   --border-radius: 2px;
-  --font-family: 'Plus Jakarta Sans', sans-serif;
+  --font-family: "Plus Jakarta Sans", sans-serif;
   --font-color-purp: rgb(167, 100, 243);
 }
 
@@ -14,7 +14,7 @@
   height: fit-content;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color .5s ease;
+  transition: background-color 0.5s ease;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   color: black;
@@ -24,30 +24,33 @@
   background-color: white;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
   text-decoration: none;
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: hidden;
+
   font-family: var(--font-family);
 }
 
 main {
-  height: 100%;
-  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 * {
   text-decoration: none;
 }
 
-
 button {
-  background-color: rgba(255,255,255, 0);
-  font-family: var( --font-family);
+  background-color: rgba(255, 255, 255, 0);
+  font-family: var(--font-family);
   font-size: 16px;
 }

@@ -2,18 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 73vh;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10vh;
+  margin-top: 7vh;
   height: 100%;
   padding: 30px;
   background-color: var(--element-bkgd-color);
-  width: 40vw;
+  width: 50vw;
 }
 
 textarea {
